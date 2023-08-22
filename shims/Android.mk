@@ -1,7 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
 
-
-
 PROTOBUF_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libprotobuf-cpp-lite-3.9.1.so
 $(PROTOBUF_SYMLINK):
 	$(hide) mkdir -p $(TARGET_OUT_VENDOR)/lib
@@ -43,20 +41,8 @@ LOCAL_MODULE := libshim_zw
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE           := libgol
-LOCAL_SRC_FILES_32     := intrinsics_shim.s
-LOCAL_SRC_FILES_64     := intrinsics_shim.cpp
-LOCAL_SHARED_LIBRARIES := liblog
-LOCAL_VENDOR_MODULE    := true
-LOCAL_LDFLAGS_arm      += -Wl,--version-script,$(LOCAL_PATH)/intrinsics_shim.arm.map
-include $(BUILD_SHARED_LIBRARY)
-
-
-
-## libnvomxadaptor_shim
-
-##include $(CLEAR_VARS)
+# libnvomxadaptor_shim
+#include $(CLEAR_VARS)
 #LOCAL_SRC_FILES := libnvomxadaptor_shim.cpp
 #LOCAL_SHARED_LIBRARIES          += libui libgui libstagefright_foundation
 #LOCAL_C_INCLUDES                += framework/native/include frameworks/av/include

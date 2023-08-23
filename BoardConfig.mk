@@ -137,6 +137,9 @@ JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
 # Malloc
 MALLOC_SVELTE := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Offmode Charging
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := "/sys/class/backlight/lcd-backlight/brightness"

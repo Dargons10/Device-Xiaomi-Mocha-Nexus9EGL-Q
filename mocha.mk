@@ -99,12 +99,6 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
-# Custom tiles
-PRODUCT_PACKAGES += \
-    ChargerTile \
-    PerformanceTile
-
-# Dexpreopt
 # Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 

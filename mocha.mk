@@ -99,9 +99,6 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
-# Dexpreopt
-PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
-
 # DRM HAL
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

@@ -13,14 +13,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.btmacaddr=03:16:6c:79:29:82
 
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
 
 #DIDIM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -60,18 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Lineage genuine
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.lineage.nofool=true
-
-# LMKD options
-PRODUCT_PROPERTY_OVERRIDES += \
- ro.lmk.low=1001 \
- ro.lmk.medium=800  \
- ro.lmk.critical=0 \
- ro.lmk.critical_upgrade=false \
- ro.lmk.upgrade_pressure=100 \
- ro.lmk.downgrade_pressure=100 \
- ro.lmk.kill_heaviest_task=true \
- ro.lmk.kill_timeout_ms=100 \
- ro.lmk.use_minfree_levels=tru \
 
 # OMX
 PRODUCT_PROPERTY_OVERRIDES += \

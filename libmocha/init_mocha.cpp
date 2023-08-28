@@ -38,12 +38,5 @@ void get_dalvik_heap_props()
 
 void vendor_load_properties()
 {
-    get_dalvik_heap_props();
-
-    android::init::property_set("dalvik.vm.heapstartsize", heapstartsize);
-    android::init::property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    android::init::property_set("dalvik.vm.heapsize", heapsize);
-    android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
-    android::init::property_set("dalvik.vm.heapminfree", heapminfree);
-    android::init::property_set("dalvik.vm.heapmaxfree", "8m");
+    
 }

@@ -111,6 +111,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiDoze
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     setup_fs

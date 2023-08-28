@@ -32,6 +32,10 @@ persist.tegra.didim.normal = 3 \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+  # fastbootd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fastbootd.available=true
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609\
@@ -115,4 +119,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.sys.usb.config=mtp,adb \
   ro.secure=0 \
   ro.adb.secure=0 
+
+
+
 

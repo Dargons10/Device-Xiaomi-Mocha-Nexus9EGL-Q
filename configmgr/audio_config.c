@@ -21,7 +21,7 @@
 #include <stddef.h>
 #include <errno.h>
 #include <assert.h>
-#include <log/log.h>
+#include <cutils/log.h>
 #include <cutils/properties.h>
 #include <cutils/compiler.h>
 #include <ctype.h>

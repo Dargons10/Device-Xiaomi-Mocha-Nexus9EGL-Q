@@ -28,13 +28,14 @@ else
 LOCAL_MODULE := audio.$(strip $(TINYHAL_AUDIO_MODULE_NAME)).$(TARGET_DEVICE)
 endif
 
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_CFLAGS += -Werror -Wno-error=unused-parameter -Wno-unused-parameter
 
 LOCAL_C_INCLUDES += \
 	external/tinycompress/include \
+	device/xiaomi/mocha/tinyalsa/include \
 	external/tinyhal/include \
 	external/expat/lib \
 	$(call include-path-for, audio-utils)
@@ -66,4 +67,3 @@ endif
 include $(BUILD_SHARED_LIBRARY)
 
 endif
-

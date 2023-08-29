@@ -28,7 +28,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-#include <log/log.h>
+#include <cutils/log.h>
 #include <cutils/properties.h>
 #include <cutils/str_parms.h>
 
@@ -377,6 +377,8 @@ static uint32_t out_get_sample_rate(const struct audio_stream *stream)
 
 static int out_set_sample_rate(struct audio_stream *stream, uint32_t rate)
 {
+    (void)stream;
+    (void)rate;
     return -ENOSYS;
 }
 
@@ -411,6 +413,8 @@ static audio_format_t out_get_format(const struct audio_stream *stream)
 
 static int out_set_format(struct audio_stream *stream, audio_format_t format)
 {
+    (void)stream;
+    (void)format;
     return -ENOSYS;
 }
 
@@ -491,17 +495,23 @@ static int out_set_volume(struct audio_stream_out *stream, float left, float rig
 
 static int out_add_audio_effect(const struct audio_stream *stream, effect_handle_t effect)
 {
+    (void)stream;
+    (void)effect;
     return 0;
 }
 
 static int out_remove_audio_effect(const struct audio_stream *stream, effect_handle_t effect)
 {
+    (void)stream;
+    (void)effect;
     return 0;
 }
 
 static int out_get_next_write_timestamp(const struct audio_stream_out *stream,
                                         int64_t *timestamp)
 {
+    (void)stream;
+    (void)timestamp;
     return -EINVAL;
 }
 
@@ -742,7 +752,7 @@ static int out_pcm_standby(struct audio_stream *stream)
 static ssize_t out_pcm_write(struct audio_stream_out *stream, const void* buffer,
                          size_t bytes)
 {
-    ALOGV("+out_pcm_write(%p) l=%zu", stream, bytes);
+    ALOGV("+out_pcm_write(%p) l=%u", stream, bytes);
 
     int ret = 0;
     struct stream_out_pcm *out = (struct stream_out_pcm *)stream;
@@ -767,7 +777,7 @@ static ssize_t out_pcm_write(struct audio_stream_out *stream, const void* buffer
         out->common.standby = false;
     }
 
-    ret = pcm_writei(out->pcm, buffer, bytes);
+    ret = pcm_writei(out->pcm, buffer, pcm_bytes_to_frames(out->pcm, bytes));
     if (ret >= 0) {
         ret = bytes;
     }
@@ -783,6 +793,8 @@ exit:
 static int out_pcm_get_render_position(const struct audio_stream_out *stream,
                                    uint32_t *dsp_frames)
 {
+    (void)stream;
+    (void)dsp_frames;
     return -EINVAL;
 }
 
@@ -910,7 +922,7 @@ static ssize_t out_compress_write(struct audio_stream_out *stream,
     struct stream_out_compress *out = (struct stream_out_compress *)stream;
     int ret = 0;
 
-    ALOGV("out_compress_write(%p) %zu", stream, bytes);
+    ALOGV("out_compress_write(%p) %u", stream, bytes);
 
     ret = open_output_compress(out);
 
@@ -1025,7 +1037,7 @@ static int out_compress_get_render_position(const struct audio_stream_out *strea
                                    uint32_t *dsp_frames)
 {
     struct stream_out_compress *out = (struct stream_out_compress *)stream;
-    unsigned long samples;
+    long unsigned int samples;
     unsigned int sampling_rate;
 
     if (dsp_frames) {
@@ -1286,51 +1298,66 @@ static audio_format_t in_get_format(const struct audio_stream *stream)
 
 static int in_set_format(struct audio_stream *stream, audio_format_t format)
 {
+    (void)stream;
+    (void)format;
     return -ENOSYS;
 }
 
 static size_t in_get_buffer_size(const struct audio_stream *stream)
 {
     const struct stream_in_common *in = (struct stream_in_common *)stream;
-    ALOGV("in_get_buffer_size(%p): %zu", stream, in->buffer_size );
+    ALOGV("in_get_buffer_size(%p): %u", stream, in->buffer_size );
     return in->buffer_size;
 }
 
 static int in_dump(const struct audio_stream *stream, int fd)
 {
+    (void)stream;
+    (void)fd;
     return 0;
 }
 
 static int in_set_parameters(struct audio_stream *stream, const char *kvpairs)
 {
+    (void)stream;
+    (void)kvpairs;
     return 0;
 }
 
 static char * in_get_parameters(const struct audio_stream *stream,
                                 const char *keys)
 {
+    (void)stream;
+    (void)keys;
     return strdup("");
 }
 
 static int in_set_gain(struct audio_stream_in *stream, float gain)
 {
+    (void)stream;
+    (void)gain;
     return 0;
 }
 
 static uint32_t in_get_input_frames_lost(struct audio_stream_in *stream)
 {
+    (void)stream;
     return 0;
 }
 
 static int in_add_audio_effect(const struct audio_stream *stream,
                                effect_handle_t effect)
 {
+    (void)stream;
+    (void)effect;
     return 0;
 }
 
 static int in_remove_audio_effect(const struct audio_stream *stream,
                                   effect_handle_t effect)
 {
+    (void)stream;
+    (void)effect;
     return 0;
 }
 
@@ -1353,7 +1380,7 @@ static void do_in_set_read_timestamp(struct stream_in_common *in)
  */
 static void do_in_realtime_delay(struct stream_in_common *in, size_t bytes)
 {
-    nsecs_t required_interval;
+    size_t required_interval;
     nsecs_t required_ns;
     nsecs_t elapsed_ns;
     struct timespec ts;
@@ -1470,10 +1497,10 @@ static int get_next_buffer(struct resampler_buffer_provider *buffer_provider,
 
     if (rsp->frames_in == 0) {
         rsp->read_status = pcm_readi(in->pcm,
-                                     (void*)rsp->buffer,
-                                     rsp->in_buffer_size);
-        if (rsp->read_status != 0) {
-            ALOGE("get_next_buffer() pcm_readi error %d", errno);
+                                   (void*)rsp->buffer,
+                                   pcm_bytes_to_frames(in->pcm, rsp->in_buffer_size));
+        if (rsp->read_status < 0) {
+            ALOGE("get_next_buffer() pcm_read error %d", errno);
             buffer->raw = NULL;
             buffer->frame_count = 0;
             return rsp->read_status;
@@ -1828,7 +1855,7 @@ static ssize_t do_in_compress_pcm_read(struct audio_stream_in *stream, void* buf
     struct audio_device *adev = in->common.dev;
     int ret = 0;
 
-    ALOGV("+do_in_compress_pcm_read %zu", bytes);
+    ALOGV("+do_in_compress_pcm_read %d", bytes);
 
     pthread_mutex_lock(&in->common.lock);
     ret = start_compress_pcm_input_stream(in);
@@ -1988,7 +2015,7 @@ static int do_open_pcm_input(struct stream_in_pcm *in)
 
     in_pcm_fill_params( in, &config );
 
-    ALOGV("input buffer size=0x%zx", in->common.buffer_size);
+    ALOGV("input buffer size=0x%x", in->common.buffer_size);
 
     /*
      * If the stream rate differs from the PCM rate, we need to
@@ -2124,7 +2151,7 @@ static ssize_t do_in_pcm_read(struct audio_stream_in *stream, void* buffer,
     struct audio_device *adev = in->common.dev;
     size_t frames_rq = bytes / in->common.frame_size;
 
-    ALOGV("+do_in_pcm_read %zu", bytes);
+    ALOGV("+do_in_pcm_read %d", bytes);
 
     pthread_mutex_lock(&in->common.lock);
     ret = start_pcm_input_stream(in);
@@ -2136,7 +2163,7 @@ static ssize_t do_in_pcm_read(struct audio_stream_in *stream, void* buffer,
     if (in->resampler.resampler != NULL) {
         ret = read_resampled_frames(in, buffer, frames_rq);
     } else {
-        ret = pcm_readi(in->pcm, buffer, bytes);
+        ret = pcm_readi(in->pcm, buffer, pcm_bytes_to_frames(in->pcm, bytes));
     }
 
     /* Assume any non-negative return is a successful read */
@@ -2764,26 +2791,35 @@ static int adev_set_parameters(struct audio_hw_device *dev, const char *kvpairs)
 static char * adev_get_parameters(const struct audio_hw_device *dev,
                                   const char *keys)
 {
+    (void)dev;
+    (void)keys;
     return strdup("");
 }
 
 static int adev_init_check(const struct audio_hw_device *dev)
 {
+    (void)dev;
     return 0;
 }
 
 static int adev_set_voice_volume(struct audio_hw_device *dev, float volume)
 {
+    (void)dev;
+    (void)volume;
     return -ENOSYS;
 }
 
 static int adev_set_master_volume(struct audio_hw_device *dev, float volume)
 {
+    (void)dev;
+    (void)volume;
     return -ENOSYS;
 }
 
 static int adev_set_mode(struct audio_hw_device *dev, audio_mode_t mode)
 {
+    (void)dev;
+    (void)mode;
     return 0;
 }
 
@@ -2791,7 +2827,9 @@ static int adev_set_mic_mute(struct audio_hw_device *dev, bool state)
 {
     struct audio_device *adev = (struct audio_device *)dev;
 
+    pthread_mutex_lock(&adev->lock);
     adev->mic_mute = state;
+    pthread_mutex_unlock(&adev->lock);
 
     return 0;
 }
@@ -2821,6 +2859,8 @@ static size_t adev_get_input_buffer_size(const struct audio_hw_device *dev,
 
 static int adev_dump(const audio_hw_device_t *device, int fd)
 {
+    (void)device;
+    (void)fd;
     return 0;
 }
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 rootdirectory="$PWD"
-dirs="frameworks/native frameworks/base external/selinux system/core system/extra"
+dirs="frameworks/native external/selinux system/core system/extras"
 
 
 RED='\033[0;31m'

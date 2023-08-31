@@ -105,8 +105,8 @@ PRODUCT_PACKAGES += \
     PerformanceTile
 
 # Dexpreopt
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    DocumentsUI
+# Dexpreopt
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # DRM HAL
 PRODUCT_PACKAGES += \

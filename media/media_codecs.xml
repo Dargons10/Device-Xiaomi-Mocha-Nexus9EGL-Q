@@ -126,7 +126,6 @@ Only the three quirks included above are recognized at this point:
             <Limit name="bitrate" range="1-62500000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-
         <MediaCodec name="OMX.Nvidia.mp3.decoder" type="audio/mpeg" >
              <Limit name="channel-count" max="6" />
              <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
@@ -143,7 +142,6 @@ Only the three quirks included above are recognized at this point:
              <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
              <Limit name="bitrate" range="8000-384000" />
         </MediaCodec>
-
         <MediaCodec name="OMX.Nvidia.vc1.decode" >
             <Type name="video/x-ms-wmv" />
             <Type name="video/wvc1" />
@@ -158,8 +156,14 @@ Only the three quirks included above are recognized at this point:
             <Limit name="block-size" value="16x16" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-    </Decoders>
+        <MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
+             <Limit name="channel-count" max="6" />
+             <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
+             <Limit name="bitrate" range="8000-384000" />
+        </MediaCodec>
 
+
+    </Decoders>
     <Encoders>
         <MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" >
             <Limit name="size" min="48x48" max="3840x2176" />
@@ -177,14 +181,5 @@ Only the three quirks included above are recognized at this point:
         </MediaCodec>
     </Encoders>
     <Include href="media_codecs_google_audio.xml" />
-
-    <Decoders>
-        <MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
-             <Limit name="channel-count" max="6" />
-             <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
-             <Limit name="bitrate" range="8000-384000" />
-        </MediaCodec>
-    </Decoders>
-
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>

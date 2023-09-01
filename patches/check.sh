@@ -1,7 +1,7 @@
 #!/bin/sh
 
 rootdirectory="$PWD"
-dirs="frameworks/native external/selinux system/core system/extras"
+dirs="bionic/libm frameworks/native external/selinux system/core system/extras"
 
 
 RED='\033[0;31m'

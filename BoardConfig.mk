@@ -108,7 +108,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB      := libinit_mocha
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/libmocha/init_mocha.cpp
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/libmocha/init_mocha.cpp
 
 # Kernel
 BOARD_KERNEL_CMDLINE := vpr_resize androidboot.selinux=permissive vmalloc=400M

@@ -169,7 +169,6 @@ PRODUCT_PACKAGES += \
     tegra-kbc.kl \
     Vendor_0955_Product_7210.kl
 
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
@@ -219,7 +218,7 @@ NV_ANDROID_FRAMEWORK_ENHANCEMENTS := true
 
 #OMX(SOFTWARE)
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.c2-poolmask=0x80000\
+    debug.stagefright.c2-poolmask=0x80000 \
     debug.stagefright.ccodec=0
 
 # Overlay
@@ -360,8 +359,3 @@ PRODUCT_PACKAGES += \
     conn_init \
     wpa_supplicant \
     wpa_supplicant.conf
-
-PRODUCT_PACKAGES += \
-    wireguard \
-    wireguard.rc
-

@@ -6,7 +6,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.sys.root_access=2 \
   ro.secure=0 \
   ro.adb.secure=0 \
-  ro.debuggable = 1 \
+  ro.debuggable = 1
 
 # AptX
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -34,21 +34,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
    persist.tegra.didim.enable = 1 \
    persist.tegra.didim.video = 5 \
-   persist.tegra.didim.normal = 3 \
+   persist.tegra.didim.normal = 3
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-  # fastbootd
+# fastbootd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fastbootd.available=true
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609\
+    ro.opengles.version=196609 \
     ro.sf.lcd_density=320 \
-    persist.tegra.compositor=surfaceflinger\
+    persist.tegra.compositor=surfaceflinger \
     persist.tegra.decompression=cde-client \
     ro.hardware.vulkan=nvgpu \
     debug.sf.latch_unsignaled=1 \
@@ -77,7 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
  ro.lmk.downgrade_pressure=100 \
  ro.lmk.kill_heaviest_task=true \
  ro.lmk.kill_timeout_ms=100 \
- ro.lmk.use_minfree_levels=true \
+ ro.lmk.use_minfree_levels=true
 
 # OMX
 PRODUCT_PROPERTY_OVERRIDES += \

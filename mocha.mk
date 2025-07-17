@@ -309,9 +309,10 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    thermal.tn8.xml
+    android.hardware.thermal@1.0-impl \
+    thermalhal.tn8.xml
 
-# TimeKeep
+ # TimeKeep
 PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep

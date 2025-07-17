@@ -270,7 +270,7 @@ PRODUCT_CHARACTERISTICS := tablet
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.mocha \
-    vendor.mokee.power@1.0
+    vendor.lineage.power@1.0
 
 # Ramdisk
 PRODUCT_PACKAGES += \

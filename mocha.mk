@@ -130,6 +130,12 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    android.hardware.broadcastradio@1.0-impl
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
+    gatekeeper.tegra
+
 # Graphics
 PRODUCT_AAPT_CONFIG += xlarge large
 TARGET_SCREEN_HEIGHT := 2048
@@ -197,16 +203,7 @@ PRODUCT_COPY_FILES += \
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service    
-
-# Memory Optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-     ro.vendor.qti.am.reschedule_service=true \
-     ro.vendor.qti.sys.fw.use_trim_settings=true \
-     ro.vendor.qti.sys.fw.trim_empty_percent=50 \
-     ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-     ro.vendor.qti.sys.fw.empty_app_percent=25
+    android.hardware.memtrack@1.0-service-nvidia
 
 # NVIDIA
 PRODUCT_COPY_FILES += \
@@ -215,12 +212,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.feature.opengl4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.feature.opengl4.xml \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.nvsi.xml
 
-NV_ANDROID_FRAMEWORK_ENHANCEMENTS := true  
-
-#OMX(SOFTWARE)
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.c2-poolmask=0x80000 \
-    debug.stagefright.ccodec=0
+# Enable nvidia framework enhancements if available
+-include vendor/lineage/product/nvidia.mk
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -273,8 +266,7 @@ PRODUCT_CHARACTERISTICS := tablet
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.mocha \
-    android.hardware.vendor.lineage.power@1.0-impl \
-    power.tegra
+    vendor.lineage.power@1.0
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -313,9 +305,10 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    thermal.tn8.xml
+    android.hardware.thermal@1.0-impl \
+    thermalhal.tn8.xml
 
-# TimeKeep
+ # TimeKeep
 PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep
@@ -354,7 +347,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0-service.legacy \
     hostapd \
     conn_init \
     wpa_supplicant \

@@ -129,6 +129,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
+# We are using old omx blobs
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.less-secure=true \
+    media.stagefright.legacyencoder=true
+
 # PBC
 PRODUCT_PROPERTY_OVERRIDES += \
    pbc.enabled=0 \

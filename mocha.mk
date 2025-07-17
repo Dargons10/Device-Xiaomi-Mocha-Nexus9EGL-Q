@@ -215,11 +215,6 @@ PRODUCT_COPY_FILES += \
 # Enable nvidia framework enhancements if available
 -include vendor/lineage/product/nvidia.mk
 
-#OMX(SOFTWARE)
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.c2-poolmask=0x80000 \
-    debug.stagefright.ccodec=0
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay 

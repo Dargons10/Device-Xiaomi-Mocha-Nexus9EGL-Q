@@ -1,3 +1,5 @@
+import /vendor/etc/init/hw/power.mocha.rc
+
 on boot
 
     exec_start init-btloader-sh

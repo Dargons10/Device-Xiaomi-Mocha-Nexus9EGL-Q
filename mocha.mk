@@ -354,7 +354,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.mocha
+	android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # Vendor seccomp policy files for media components:
 PRODUCT_COPY_FILES += \

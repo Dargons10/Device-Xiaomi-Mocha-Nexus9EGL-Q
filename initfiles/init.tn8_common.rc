@@ -1,12 +1,19 @@
-#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+# Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
 #
-#NVIDIA Corporation and its licensors retain all intellectual property and
-#proprietary rights in and to this software and related documentation.  Any
-#use, reproduction, disclosure or distribution of this software and related
-#documentation without an express license agreement from NVIDIA Corporation
-#is strictly prohibited.
+# NVIDIA Corporation and its licensors retain all intellectual property and
+# proprietary rights in and to this software and related documentation.  Any
+# use, reproduction, disclosure or distribution of this software and related
+# documentation without an express license agreement from NVIDIA Corporation
+# is strictly prohibited.
 
 on early-init
+    write /sys/module/android/parameters/allow_text_relocations 1
+    setprop ro.kernel.android.allow_text_relocations 1
+    setprop persist.sys.legacy_text_reloc 1
+    setprop ro.allow.textrelocation 1
+    setprop ro.debug.ropi 0
+    setprop ro.debug.rwx_fp 0
+
     # create /oem symbol link
     symlink /system/vendor/oem /oem
     chmod 0755 /oem
@@ -17,30 +24,20 @@ on early-init
     chmod 0755 /lbh
     chown root system /lbh
 
-    #hack to make hacked mipad GL blobs work (need /gl/libEGL_tegra.so path)
+    # hack to make hacked mipad GL blobs work (need /gl/libEGL_tegra.so path)
     symlink /system/lib/egl /gl
     chmod 0755 /gl
     chown root system /gl
+
+    write /sys/bus/i2c/devices/i2c-2/clock_rate 100000
+    write /sys/bus/i2c/devices/i2c-2/retry_count 3
+    write /sys/bus/i2c/devices/i2c-2/timeout 500000
 
 on fs
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
     setprop ro.crypto.umount_sd false
     setprop ro.crypto.fuse_sdcard true
     setprop audio.custompolicy 1
-
-on post-fs-data
-    # Set SELinux security contexts for NvCPL keylayout files.
-    mkdir /data/system/devices 0774 system system
-    mkdir /data/system/devices/keylayout 0774 system system
-    restorecon_recursive /data/system/devices/keylayout
-
-    
-on boot
-    #max resolution supported for Miracast is 1080p, represented interms of macroblocks
-    setprop nvwfd.maxresolution_macroblocks 8160
-    #enable Miracast game mode support
-    setprop nvwfd.gamemode 1
-
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
     mkdir /dev/cpuset/camera-daemon
@@ -50,8 +47,20 @@ on boot
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
+on post-fs-data
+    # Set SELinux security contexts for NvCPL keylayout files.
+    mkdir /data/system/devices 0774 system system
+    mkdir /data/system/devices/keylayout 0774 system system
+    restorecon_recursive /data/system/devices/keylayout
+
+on boot
+    #max resolution supported for Miracast is 1080p, represented interms of macroblocks
+    setprop nvwfd.maxresolution_macroblocks 8160
+    #enable Miracast game mode support
+    setprop nvwfd.gamemode 1
+
 on init
-     setprop ro.feature.stylus 1
+    setprop ro.feature.stylus 1
     setprop persist.tegra.cursor.enable 1
     setprop sf.async.cursor.enable 1
     setprop input.tch_blk.enabled 1
@@ -75,19 +84,35 @@ on init
     setprop input.nonwhitelistedmode 3
     setprop keyguard.no_require_sim true
     setprop persist.tegra.didim.enable 0
+    write /proc/sys/vm/page-cluster 0
     write /d/tegra_actmon/cpu_emc/avg_act_threshold 50000
 
 service charger /system/bin/charger
     class charger
-    user root
-    group log root radio system graphics input
+    critical
+    user system
+    group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
+    oneshot
 
 on charger
-    setprop sys.usb.config mtp
-    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/APP /system wait ro
-    write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/enable 0
-    write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp -1
+	chmod 0755 /system/bin/charger_led.sh
+
+
+    exec - root root -- /system/bin/sh /system/bin/charger_led.sh &
+
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor 'powersave'
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor 'powersave'
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor 'powersave'
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor 'powersave'
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0

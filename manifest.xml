@@ -176,6 +176,16 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.soundtrigger</name>
+        <transport arch="32">passthrough</transport>
+        <version>2.1</version>
+        <interface>
+            <name>ISoundTriggerHw</name>
+            <instance>default</instance>
+        </interface>
+	    <fqname>@2.1::ISoundTriggerHw/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

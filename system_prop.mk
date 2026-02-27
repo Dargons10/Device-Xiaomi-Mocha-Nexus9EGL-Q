@@ -81,6 +81,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/vendor/etc/mocha_btmacaddr.txt
 
+# Charger
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.chgdisabled=0
+
 # DIDIM
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \

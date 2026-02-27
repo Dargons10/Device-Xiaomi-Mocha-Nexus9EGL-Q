@@ -33,7 +33,9 @@
 /dev/nvhost-ctrl-isp.*			u:object_r:camera_device:s0
 /dev/nvhost-isp.*			u:object_r:camera_device:s0
 /dev/nvhost-msenc			u:object_r:camera_device:s0
+/dev/imx179		       	u:object_r:camera_device:s0
 /dev/focuser				u:object_r:camera_device:s0
+/dev/ov5693    			u:object_r:camera_device:s0
 /dev/torch.*				u:object_r:camera_device:s0
 /dev/mipi-cal				u:object_r:camera_device:s0
 /dev/tegra_camera_ctrl			u:object_r:camera_device:s0
@@ -47,7 +49,7 @@
 /dev/gpu_freq_max			u:object_r:pmqos_device:s0
 /dev/gpu_freq_min			u:object_r:pmqos_device:s0
 # TLK device
-#/dev/tlk_device				u:object_r:tee_device:s0
+/dev/tlk_device				u:object_r:tee_device:s0
 # modem devices
 /dev/ttyACM.*				u:object_r:radio_device:s0
 # Tegra System Profiler
@@ -83,6 +85,7 @@
 /dev/block/platform/sdhci-tegra(.*)/by-name/LNX		u:object_r:boot_block_device:s0
 /dev/block/platform/sdhci-tegra(.*)/by-name/SOS		u:object_r:recovery_block_device:s0
 /dev/block/platform/sdhci-tegra(.*)/by-name/MDA		u:object_r:metadata_block_device:s0
+/dev/block/platform/sdhci-tegra(.*)/by-name/MSC		u:object_r:misc_block_device:s0
 # AB system partition
 /dev/block/platform/sdhci-tegra(.*)/by-name/LNX-A		u:object_r:boot_block_device:s0
 /dev/block/platform/sdhci-tegra(.*)/by-name/LNX-B		u:object_r:boot_block_device:s0
@@ -123,6 +126,7 @@
 /dev/block/platform/tegra-sata(.*)/by-name/SOS		u:object_r:recovery_block_device:s0
 /dev/block/platform/tegra-sata(.*)/by-name/MDA		u:object_r:metadata_block_device:s0
 /dev/block/platform/tegra-sata(.*)/by-name/RP4  	u:object_r:fscheck_block_device:s0
+/dev/block/platform/tegra-sata(.*)/by-name/MSC		u:object_r:misc_block_device:s0
 # external usb
 /dev/block/platform/tegra-xhci/by-name/UDA              u:object_r:userdata_block_device:s0
 /dev/block/platform/tegra-xhci/by-name/CAC              u:object_r:cache_block_device:s0
@@ -142,9 +146,12 @@
 
 #############################
 # System files
+/charger    u:object_r:charger_exec:s0
+/system/bin/charger    u:object_r:charger_exec:s0
+/system/bin/charger_led.sh    u:object_r:charger_exec:s0
 
 # TEE
-#(/system)?/vendor/bin/tlk_daemon	u:object_r:tee_exec:s0
+(/system)?/vendor/bin/tlk_daemon	u:object_r:tee_exec:s0
 (/system)?/vendor/bin/eks2_client	u:object_r:tee_exec:s0
 (/system)?/vendor/bin/ss_status		u:object_r:tee_exec:s0
 (/system)?/vendor/bin/run_ss_status.sh	u:object_r:tee_exec:s0
@@ -212,6 +219,7 @@
 (/system)?/vendor/bin/factory_tests	u:object_r:factory_tests_exec:s0
 # Lineage Trust HAL
 /system/vendor/bin/hw/vendor\.lineage\.trust@1\.0-service                    u:object_r:hal_trust_default_exec:s0
+
 #############################
 # Data files
 
@@ -220,9 +228,9 @@
 # camera config folder
 /data/camera_config(/.*)?		u:object_r:camera_config_file:s0
 # tlk data folder
-#/data/tlk(/.*)?				u:object_r:tee_data_file:s0
+/data/tlk(/.*)?				u:object_r:tee_data_file:s0
 # tlk ss data folder
-#/data/ss(/.*)?				u:object_r:tee_data_file:s0
+/data/ss(/.*)?				u:object_r:tee_data_file:s0
 # user calibration
 /data/touchscreen(/.*)?			u:object_r:user_calib_file:s0
 # stats data share folder
@@ -275,6 +283,19 @@
 /sys/devices/platform/tegra-ehci\.[0-9](/.*)?		u:object_r:sysfs_bus_usb:s0
 /sys/devices/tegra-ehci\.[0-9](/.*)?			u:object_r:sysfs_bus_usb:s0
 # LED sysfs
+/sys/class/leds/red(/.*)?          u:object_r:sysfs_led:s0
+/sys/class/leds/green(/.*)?        u:object_r:sysfs_led:s0
+/sys/class/leds/blue(/.*)?         u:object_r:sysfs_led:s0
+/sys/class/leds/red/brightness     u:object_r:sysfs_led:s0
+/sys/class/leds/green/brightness   u:object_r:sysfs_led:s0
+/sys/class/leds/blue/brightness    u:object_r:sysfs_led:s0
+/sys/class/leds/red/trigger        u:object_r:sysfs_led:s0
+/sys/class/leds/green/trigger      u:object_r:sysfs_led:s0
+/sys/class/leds/blue/trigger       u:object_r:sysfs_led:s0
+# LED sysfs
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight(/.*)?  u:object_r:sysfs_backlight:s0
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/brightness  u:object_r:sysfs_backlight:s0
+# USB sysfs
 /sys/devices/platform/tegra-xhci(/.*)?			u:object_r:sysfs_bus_usb:s0
 # SATA sysfs
 /sys/devices/platform/tegra-sata.*/ata1/power/control					u:object_r:sysfs_sata:s0
@@ -382,6 +403,9 @@
 /sys/kernel/debug/suspend_time  u:object_r:debugfs_suspend_time_stats:s0
 /sys/kernel/debug/wake_irq      u:object_r:debugfs_wake_irq_stats:s0
 
+# nvmap for memtrack
+/sys/kernel/debug/nvmap(/.*)?    u:object_r:debugfs_nvmap:s0
+
 # emc load stats
 /sys/kernel/debug/tegra_actmon/emc/avg_activity	u:object_r:debugfs_emc_load:s0
 
@@ -399,4 +423,3 @@
 
 # Variable refresh rate sysfs
 /sys/devices/platform/host1x/tegradc.[0-1]/vrr(/.*)    u:object_r:sysfs_vrr:s0
-

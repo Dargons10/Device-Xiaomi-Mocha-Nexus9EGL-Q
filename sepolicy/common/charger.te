@@ -1,0 +1,15 @@
+allow charger sysfs:file rw_file_perms;
+allow charger sysfs_battery:file r_file_perms;
+allow charger power_supply:file r_file_perms;
+allow charger frame_buffer_device:chr_file rw_file_perms;
+allow charger graphics_device:chr_file rw_file_perms;
+allow charger input_device:chr_file rw_file_perms;
+
+allow power sysfs_battery:file rw_file_perms;
+allow power sysconfig_file:file r_file_perms;
+
+allow power sysfs_charger:dir search;
+allow power sysfs_charger:file rw_file_perms;
+
+allow charger led_sysfs:file rw_file_perms;
+allow charger led:class { write };

@@ -103,6 +103,15 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
+# ChargerTile
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
+# Charging LED
+PRODUCT_COPY_FILES += \
+    device/xiaomi/mocha/initfiles/charger_led.sh:system/bin/charger_led.sh
+
 # DRM HAL
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -279,9 +288,9 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service.mocha \
+    android.hardware.power@1.0-service \
     android.hardware.power.stats@1.0-service.mock \
-    power.tegra
+    vendor.lineage.power@1.0
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -337,7 +346,11 @@ PRODUCT_PACKAGES += \
 
 # Use legacy ADB USB support
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.adb.nonblocking_ffs=false
+    ro.adb.nonblocking_ffs=false \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
 
 # Vibrator
 PRODUCT_PACKAGES += \

@@ -29,11 +29,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.kill_heaviest_task=false \
     ro.statsd.enable=true
 
-# Heap sizes (adjusted for 2GB RAM)
+# Dalvik/ART heap tuning
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.madvise-random=true
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.7 \
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=16m
 
 # Compiler and optimization settings
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile

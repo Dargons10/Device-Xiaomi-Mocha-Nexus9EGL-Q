@@ -289,7 +289,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     android.hardware.power@1.0-service.mocha \
-    android.hardware.power.stats@1.0-service.mock \
+    android.hardware.power.stats@1.0-service.mocha \
     vendor.lineage.power@1.0
 
 # Ramdisk

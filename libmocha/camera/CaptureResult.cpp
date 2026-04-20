@@ -15,7 +15,7 @@
  */
 
 #define LOG_TAG "Camera-CaptureResult"
-#include <log/Log.h>
+#include <utils/Log.h>
 
 #include <camera/CaptureResult.h>
 #include <binder/Parcel.h>

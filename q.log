@@ -1,0 +1,755 @@
+--------- beginning of main
+04-20 21:09:03.003   166   166 W auditd  : type=2000 audit(0.0:1): initialized
+04-20 21:09:06.623   166   166 I auditd  : type=1403 audit(0.0:2): policy loaded auid=4294967295 ses=4294967295
+04-20 21:09:06.923     1     1 I init    : type=1400 audit(0.0:3): avc: denied { module_request } for kmod="fs-cgroup2" scontext=u:r:init:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+04-20 21:09:07.029   159   159 I ueventd : type=1400 audit(0.0:4): avc: denied { sys_nice } for capability=23 scontext=u:r:ueventd:s0 tcontext=u:r:ueventd:s0 tclass=capability permissive=1
+04-20 21:09:07.708     1     1 I init    : type=1400 audit(0.0:5): avc: denied { create } for name="sdcard" scontext=u:r:init:s0 tcontext=u:object_r:tmpfs:s0 tclass=lnk_file permissive=1
+04-20 21:09:07.760   153   153 I init    : type=1400 audit(0.0:6): avc: denied { write } for name="/" dev="tmpfs" ino=11000 scontext=u:r:vendor_init:s0 tcontext=u:object_r:tmpfs:s0 tclass=dir permissive=1
+04-20 21:09:07.760   153   153 I init    : type=1400 audit(0.0:7): avc: denied { add_name } for name="tmp" scontext=u:r:vendor_init:s0 tcontext=u:object_r:tmpfs:s0 tclass=dir permissive=1
+04-20 21:09:07.761   153   153 I init    : type=1400 audit(0.0:8): avc: denied { create } for name="tmp" scontext=u:r:vendor_init:s0 tcontext=u:object_r:tmpfs:s0 tclass=dir permissive=1
+04-20 21:09:07.807   153   153 W libc    : Unable to set property "ro.radio.noril" to "true": error code: 0xb
+04-20 21:09:07.827   169   169 I SELinux : SELinux: Loaded service_contexts from:
+04-20 21:09:07.827   169   169 I SELinux :     /vendor/etc/selinux/vndservice_contexts
+04-20 21:09:07.832   167   167 I SELinux : SELinux: Loaded service_contexts from:
+04-20 21:09:07.835   153   153 I init    : type=1400 audit(0.0:9): avc: denied { write } for name="avg_act_threshold" dev="debugfs" ino=6233 scontext=u:r:vendor_init:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+04-20 21:09:07.836   167   167 I SELinux :     /system/etc/selinux/plat_service_contexts
+04-20 21:09:07.836   167   167 I SELinux :     /vendor_service_contexts
+04-20 21:09:07.897   168   168 I hwservicemanager: hwservicemanager is ready now.
+04-20 21:09:07.965   183   183 I e2fsck  : type=1400 audit(0.0:10): avc: denied { read } for name="mmcblk0p29" dev="tmpfs" ino=1506 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+04-20 21:09:07.966   183   183 I e2fsck  : type=1400 audit(0.0:11): avc: denied { open } for path="/dev/block/mmcblk0p29" dev="tmpfs" ino=1506 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+04-20 21:09:07.966   183   183 I e2fsck  : type=1400 audit(0.0:12): avc: denied { write } for name="mmcblk0p29" dev="tmpfs" ino=1506 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+04-20 21:09:07.967   183   183 I e2fsck  : type=1400 audit(0.0:13): avc: denied { ioctl } for path="/dev/block/mmcblk0p29" dev="tmpfs" ino=1506 ioctlcmd=127c scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+--------- beginning of system
+04-20 21:09:08.028   176   176 I vold    : Vold 3.0 (the awakening) firing up
+04-20 21:09:08.031   176   176 D vold    : Detected support for: ext4 f2fs ntfs vfat
+04-20 21:09:08.041   176   176 D vold    : Tearing down stale mount /mnt/tmp
+04-20 21:09:08.042   176   176 D vold    : Tearing down stale mount /mnt/tmp
+04-20 21:09:08.043   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop6: No such device or address
+04-20 21:09:08.043   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop2: No such device or address
+04-20 21:09:08.043   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop5: No such device or address
+04-20 21:09:08.043   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop1: No such device or address
+04-20 21:09:08.043   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop7: No such device or address
+04-20 21:09:08.044   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop4: No such device or address
+04-20 21:09:08.044   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop3: No such device or address
+04-20 21:09:08.044   176   176 W vold    : Failed to LOOP_GET_STATUS64 /dev/block/loop0: No such device or address
+04-20 21:09:08.052   176   176 D vold    : VoldNativeService::start() completed OK
+04-20 21:09:08.346   189   189 I mkswap  : type=1400 audit(0.0:14): avc: denied { read write } for name="zram0" dev="tmpfs" ino=6374 scontext=u:r:toolbox:s0 tcontext=u:object_r:ram_device:s0 tclass=blk_file permissive=1
+04-20 21:09:08.346   189   189 I mkswap  : type=1400 audit(0.0:15): avc: denied { open } for path="/dev/block/zram0" dev="tmpfs" ino=6374 scontext=u:r:toolbox:s0 tcontext=u:object_r:ram_device:s0 tclass=blk_file permissive=1
+04-20 21:09:08.346   189   189 I mkswap  : type=1400 audit(0.0:16): avc: denied { getattr } for path="/dev/block/zram0" dev="tmpfs" ino=6374 scontext=u:r:toolbox:s0 tcontext=u:object_r:ram_device:s0 tclass=blk_file permissive=1
+04-20 21:09:08.350     1     1 I init    : type=1400 audit(0.0:17): avc: denied { write } for name="zram0" dev="tmpfs" ino=6374 scontext=u:r:init:s0 tcontext=u:object_r:ram_device:s0 tclass=blk_file permissive=1
+04-20 21:09:08.353     1     1 I init    : type=1400 audit(0.0:18): avc: denied { mounton } for path="/sys/fs/pstore" dev="pstore" ino=6486 scontext=u:r:init:s0 tcontext=u:object_r:pstorefs:s0 tclass=dir permissive=1 b/77873135
+04-20 21:09:08.360   153   153 I init    : type=1400 audit(0.0:19): avc: denied { create } for name="cpus" scontext=u:r:vendor_init:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:08.360   153   153 I init    : type=1400 audit(0.0:20): avc: denied { write } for path="/dev/cpuset/camera-daemon/cpus" dev="tmpfs" ino=6769 scontext=u:r:vendor_init:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:08.518   176   186 I Checkpoint: cp_prepareCheckpoint called
+04-20 21:09:08.579   168   168 W /system/bin/hwservicemanager: Cannot add manifest fragment /vendor/etc/vintf/manifest/android.hardware.light@2.0-service.xml:HAL "android.hardware.light" has a conflict.
+04-20 21:09:08.580   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.keymaster@3.0::IKeymasterDevice/default in either framework or device manifest.
+04-20 21:09:08.585   191   191 I ServiceManagement: Registered android.system.suspend@1.0::ISystemSuspend/default (start delay of 131ms)
+04-20 21:09:08.586   191   191 I ServiceManagement: Removing namespace from process name android.system.suspend@1.0-service to suspend@1.0-service.
+04-20 21:09:08.599   197   197 E fsverity_init: Failed to load /product/etc/security/fsverity/*.der
+04-20 21:09:08.608   192   192 I android.hardware.keymaster@3.0-impl: Fetching keymaster device name default
+04-20 21:09:08.617   192   192 I ServiceManagement: Registered android.hardware.keymaster@3.0::IKeymasterDevice/default (start delay of 155ms)
+04-20 21:09:08.618   192   192 I ServiceManagement: Removing namespace from process name android.hardware.keymaster@3.0-service to keymaster@3.0-service.
+04-20 21:09:08.618   192   192 I android.hardware.keymaster@3.0-service: Registration complete for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+04-20 21:09:08.627   198   198 E /system/bin/mini-keyctl: Failed to open /proc/keys: No such file or directory
+04-20 21:09:08.627   198   198 E /system/bin/mini-keyctl: Cannot find keyring id
+04-20 21:09:08.662   199   199 E fsverity_init: Failed to restrict .fs-verity keyring
+04-20 21:09:08.753   200   200 I apexd   : Marking APEXd as starting
+04-20 21:09:08.755   200   200 I apexd   : Scanning /system/apex for embedded keys
+04-20 21:09:08.760   200   200 I apexd   : Scanning /product/apex for embedded keys
+04-20 21:09:08.760   200   200 I apexd   : ... does not exist. Skipping
+04-20 21:09:08.760   200   200 I apexd   : Populating APEX database from mounts...
+04-20 21:09:08.761   200   200 E apexd   : Failed to walk /product/apex : Can't open /product/apex for reading : No such file or directory
+04-20 21:09:08.762   200   200 I apexd   : Found "/apex/com.android.runtime@1"
+04-20 21:09:08.762   200   200 I apexd   : Found "/apex/com.android.tzdata@290000000"
+04-20 21:09:08.762   200   200 I apexd   : 2 packages restored.
+04-20 21:09:08.763   200   200 I apexd   : Scanning /data/apex/sessions looking for sessions to be activated.
+04-20 21:09:08.764   200   200 I apexd   : Scanning /data/apex/active looking for APEX packages.
+04-20 21:09:08.765   200   200 I apexd   : Activated 0 packages. Skipped: 0
+04-20 21:09:08.765   200   200 I apexd   : Scanning /system/apex looking for APEX packages.
+04-20 21:09:08.767   200   200 I apexd   : Found /system/apex/com.android.conscrypt
+04-20 21:09:08.767   200   200 V apexd   : Creating mount point: /apex/com.android.conscrypt@299900000
+04-20 21:09:08.767   200   200 I apexd   : Successfully bind-mounted flattened package /system/apex/com.android.conscrypt on /apex/com.android.conscrypt@299900000
+04-20 21:09:08.768   200   200 V apexd   : Creating bind-mount for /apex/com.android.conscrypt for /apex/com.android.conscrypt@299900000
+04-20 21:09:08.768   200   200 V apexd   : Creating mountpoint /apex/com.android.conscrypt
+04-20 21:09:08.768   200   200 V apexd   : Bind-mounting /apex/com.android.conscrypt@299900000 to /apex/com.android.conscrypt
+04-20 21:09:08.768   200   200 D apexd   : Successfully activated /system/apex/com.android.conscrypt package_name: com.android.conscrypt version: 299900000
+04-20 21:09:08.768   200   200 I apexd   : Found /system/apex/com.android.runtime.debug
+04-20 21:09:08.769   200   200 I apexd   : Skipping activation of /system/apex/com.android.runtime.debug same package with higher version 1 is already active
+04-20 21:09:08.769   200   200 I apexd   : Found /system/apex/com.android.media
+04-20 21:09:08.769   200   200 V apexd   : Creating mount point: /apex/com.android.media@290000000
+04-20 21:09:08.770   200   200 I apexd   : Successfully bind-mounted flattened package /system/apex/com.android.media on /apex/com.android.media@290000000
+04-20 21:09:08.770   200   200 V apexd   : Creating bind-mount for /apex/com.android.media for /apex/com.android.media@290000000
+04-20 21:09:08.770   200   200 V apexd   : Creating mountpoint /apex/com.android.media
+04-20 21:09:08.770   200   200 V apexd   : Bind-mounting /apex/com.android.media@290000000 to /apex/com.android.media
+04-20 21:09:08.770   200   200 D apexd   : Successfully activated /system/apex/com.android.media package_name: com.android.media version: 290000000
+04-20 21:09:08.770   200   200 I apexd   : Found /system/apex/com.android.media.swcodec
+04-20 21:09:08.771   200   200 V apexd   : Creating mount point: /apex/com.android.media.swcodec@290000000
+04-20 21:09:08.771   200   200 I apexd   : Successfully bind-mounted flattened package /system/apex/com.android.media.swcodec on /apex/com.android.media.swcodec@290000000
+04-20 21:09:08.771   200   200 V apexd   : Creating bind-mount for /apex/com.android.media.swcodec for /apex/com.android.media.swcodec@290000000
+04-20 21:09:08.771   200   200 V apexd   : Creating mountpoint /apex/com.android.media.swcodec
+04-20 21:09:08.772   200   200 V apexd   : Bind-mounting /apex/com.android.media.swcodec@290000000 to /apex/com.android.media.swcodec
+04-20 21:09:08.772   200   200 D apexd   : Successfully activated /system/apex/com.android.media.swcodec package_name: com.android.media.swcodec version: 290000000
+04-20 21:09:08.772   200   200 I apexd   : Found /system/apex/com.android.resolv
+04-20 21:09:08.772   200   200 V apexd   : Creating mount point: /apex/com.android.resolv@290000000
+04-20 21:09:08.773   200   200 I apexd   : Successfully bind-mounted flattened package /system/apex/com.android.resolv on /apex/com.android.resolv@290000000
+04-20 21:09:08.773   200   200 V apexd   : Creating bind-mount for /apex/com.android.resolv for /apex/com.android.resolv@290000000
+04-20 21:09:08.773   200   200 V apexd   : Creating mountpoint /apex/com.android.resolv
+04-20 21:09:08.773   200   200 V apexd   : Bind-mounting /apex/com.android.resolv@290000000 to /apex/com.android.resolv
+04-20 21:09:08.773   200   200 D apexd   : Successfully activated /system/apex/com.android.resolv package_name: com.android.resolv version: 290000000
+04-20 21:09:08.773   200   200 I apexd   : Found /system/apex/com.android.tzdata
+04-20 21:09:08.774   200   200 I apexd   : Skipping activation of /system/apex/com.android.tzdata same package with higher version 290000000 is already active
+04-20 21:09:08.774   200   200 I apexd   : Activated 4 packages. Skipped: 2
+04-20 21:09:08.774   200   200 I apexd   : Scanning /product/apex looking for APEX packages.
+04-20 21:09:08.774   200   200 E apexd   : Failed to activate packages from /product/apex : Failed to scan /product/apex : Can't open /product/apex for reading : No such file or directory
+04-20 21:09:08.775   200   200 I apexd   : Marking APEXd as ready
+04-20 21:09:08.837   176   184 D vold    : fscrypt_init_user0
+04-20 21:09:08.837   176   184 D vold    : fscrypt_prepare_user_storage for volume null, user 0, serial 0, flags 1
+04-20 21:09:08.837   176   184 D vold    : Preparing: /data/system/users/0
+04-20 21:09:08.838   176   184 D vold    : Preparing: /data/misc/profiles/cur/0
+04-20 21:09:08.838   176   184 D vold    : Preparing: /data/system_de/0
+04-20 21:09:08.839   176   184 D vold    : Preparing: /data/misc_de/0
+04-20 21:09:08.839   176   184 D vold    : Preparing: /data/vendor_de/0
+04-20 21:09:08.839   176   184 D vold    : Preparing: /data/user_de/0
+04-20 21:09:08.840   176   184 D vold    : /system/bin/vold_prepare_subdirs
+04-20 21:09:08.840   176   184 D vold    :     prepare
+04-20 21:09:08.840   176   184 D vold    :     
+04-20 21:09:08.840   176   184 D vold    :     0
+04-20 21:09:08.840   176   184 D vold    :     1
+04-20 21:09:08.894   204   204 D vold_prepare_subdirs: Setting up mode 700 uid 0 gid 0 context u:object_r:vold_data_file:s0 on path: /data/misc_de/0/vold
+04-20 21:09:08.896   204   204 D vold_prepare_subdirs: Setting up mode 700 uid 0 gid 0 context u:object_r:storaged_data_file:s0 on path: /data/misc_de/0/storaged
+04-20 21:09:08.897   204   204 D vold_prepare_subdirs: Setting up mode 700 uid 0 gid 0 context u:object_r:rollback_data_file:s0 on path: /data/misc_de/0/rollback
+04-20 21:09:08.898   204   204 D vold_prepare_subdirs: Setting up mode 700 uid 1000 gid 1000 context u:object_r:fingerprint_vendor_data_file:s0 on path: /data/vendor_de/0/fpdata
+04-20 21:09:08.899   204   204 D vold_prepare_subdirs: Setting up mode 700 uid 1000 gid 1000 context u:object_r:face_vendor_data_file:s0 on path: /data/vendor_de/0/facedata
+04-20 21:09:08.902   176   184 D vold    : fscrypt_unlock_user_key 0 serial=0 token_present=0
+04-20 21:09:08.903   176   184 E vold    : Failed to chmod /data/system_ce/0: No such file or directory
+04-20 21:09:08.903   176   184 E vold    : Failed to chmod /data/misc_ce/0: No such file or directory
+04-20 21:09:08.939   206   206 I /system/bin/tzdatacheck: timezone distro dir /data/misc/zoneinfo/current does not exist. No action required.
+04-20 21:09:08.942     1     1 I init    : type=1400 audit(0.0:21): avc: denied { setattr } for name="file" dev="sysfs" ino=11426 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:08.955   153   153 I init    : type=1400 audit(0.0:22): avc: denied { write } for name="/" dev="mmcblk0p29" ino=2 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:08.955   153   153 I init    : type=1400 audit(0.0:23): avc: denied { add_name } for name="sensors" scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:08.955   153   153 I init    : type=1400 audit(0.0:24): avc: denied { create } for name="sensors" scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:08.957   153   153 I init    : type=1400 audit(0.0:25): avc: denied { setattr } for name="sensors" dev="mmcblk0p29" ino=335217 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:08.998   153   153 I init    : type=1400 audit(0.0:26): avc: denied { read } for name="keylayout" dev="mmcblk0p29" ino=294343 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:08.999   153   153 I init    : type=1400 audit(0.0:27): avc: denied { open } for path="/data/system/devices/keylayout" dev="mmcblk0p29" ino=294343 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+04-20 21:09:09.005   207   207 I logcat  : type=1400 audit(0.0:28): avc: denied { dac_override } for capability=1 scontext=u:r:logpersist:s0 tcontext=u:r:logpersist:s0 tclass=capability permissive=1
+04-20 21:09:09.005   207   207 I logcat  : type=1400 audit(0.0:29): avc: denied { read } for name="/" dev="mmcblk0p28" ino=2 scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=dir permissive=1
+04-20 21:09:09.005   207   207 I logcat  : type=1400 audit(0.0:30): avc: denied { open } for path="/cache" dev="mmcblk0p28" ino=2 scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=dir permissive=1
+04-20 21:09:09.011   207   207 I logcat  : type=1400 audit(0.0:31): avc: denied { write } for name="/" dev="mmcblk0p28" ino=2 scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=dir permissive=1
+04-20 21:09:09.011   207   207 I logcat  : type=1400 audit(0.0:32): avc: denied { add_name } for name="boot_log.txt" scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=dir permissive=1
+04-20 21:09:09.011   207   207 I logcat  : type=1400 audit(0.0:33): avc: denied { create } for name="boot_log.txt" scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=file permissive=1
+04-20 21:09:09.012   207   207 I logcat  : type=1400 audit(0.0:34): avc: denied { append open } for path="/cache/boot_log.txt" dev="mmcblk0p28" ino=11 scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=file permissive=1
+04-20 21:09:09.012   207   207 I logcat  : type=1400 audit(0.0:35): avc: denied { getattr } for path="/cache/boot_log.txt" dev="mmcblk0p28" ino=11 scontext=u:r:logpersist:s0 tcontext=u:object_r:cache_file:s0 tclass=file permissive=1
+04-20 21:09:09.077   210   210 I art_apex: === ART pre-boot integrity checks ===
+04-20 21:09:09.152   213   213 F art_apex: Device is not fsverity-enabled.
+04-20 21:09:09.286   215   215 E /system/bin/recovery-persist: Failed to unlink /cache/recovery/last_install: No such file or directory
+04-20 21:09:09.319   218   218 I /system/bin/flags_health_check: ServerConfigurableFlagsReset reset_mode value: 0
+04-20 21:09:09.319   218   218 I /system/bin/flags_health_check: ServerConfigurableFlagsReset attempted boot count is under threshold, skipping reset.
+04-20 21:09:09.421   221   221 I bootstat: Service started: /system/bin/bootstat --set_system_boot_reason 
+04-20 21:09:09.426   221   221 I bootstat: Canonical boot reason: reboot
+04-20 21:09:09.426   221   221 I bootstat: Canonical boot reason: reboot
+04-20 21:09:09.558   222   222 I ServiceManagement: Registered android.hidl.allocator@1.0::IAllocator/ashmem (start delay of 154ms)
+04-20 21:09:09.559   222   222 I ServiceManagement: Removing namespace from process name android.hidl.allocator@1.0-service to allocator@1.0-service.
+04-20 21:09:09.574   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.bluetooth@1.0::IBluetoothHci/default in either framework or device manifest.
+04-20 21:09:09.597   223   223 I ServiceManagement: Registered android.hardware.bluetooth@1.0::IBluetoothHci/default (start delay of 175ms)
+04-20 21:09:09.598   223   223 I ServiceManagement: Removing namespace from process name android.hardware.bluetooth@1.0-service to bluetooth@1.0-service.
+04-20 21:09:09.602   223   223 I android.hardware.bluetooth@1.0-service: Registration complete for android.hardware.bluetooth@1.0::IBluetoothHci/default.
+04-20 21:09:09.692   225   225 W /vendor/bin/hw/android.hardware.configstore@1.1-service: Could not find seccomp policy file at: /vendor/etc/seccomp_policy/configstore@1.1.policy
+04-20 21:09:09.732   225   225 I ServiceManagement: Registered android.hardware.configstore@1.1::ISurfaceFlingerConfigs/default (start delay of 289ms)
+04-20 21:09:09.733   225   225 I ServiceManagement: Removing namespace from process name android.hardware.configstore@1.1-service to configstore@1.1-service.
+04-20 21:09:09.740   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.gatekeeper@1.0::IGatekeeper/default in either framework or device manifest.
+04-20 21:09:09.530   229   229 I init    : type=1400 audit(0.0:36): avc: denied { execute_no_trans } for path="/system/vendor/bin/hw/android.hardware.light@2.0-service.mocha" dev="mmcblk0p26" ino=2979 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+04-20 21:09:09.758   230   230 I android.hardware.memtrack@1.0-service-nvidia: Memtrack HAL Service 1.0 for Nvidia is starting.
+04-20 21:09:09.785   168   168 E SELinux : avc:  denied  { add } for interface=android.hardware.memtrack::IMemtrack sid=u:r:init:s0 pid=230 scontext=u:r:init:s0 tcontext=u:object_r:hal_memtrack_hwservice:s0 tclass=hwservice_manager permissive=1
+04-20 21:09:09.798   168   168 E SELinux : avc:  denied  { add } for interface=android.hidl.base::IBase sid=u:r:init:s0 pid=230 scontext=u:r:init:s0 tcontext=u:object_r:hidl_base_hwservice:s0 tclass=hwservice_manager permissive=1
+04-20 21:09:09.816   230   230 I ServiceManagement: Registered android.hardware.memtrack@1.0::IMemtrack/default (start delay of 294ms)
+04-20 21:09:09.817   230   230 I ServiceManagement: Removing namespace from process name android.hardware.memtrack@1.0-service-nvidia to memtrack@1.0-service-nvidia.
+04-20 21:09:09.818   230   230 I android.hardware.memtrack@1.0-service-nvidia: Successfully registered IMemtrack
+04-20 21:09:09.818   230   230 I android.hardware.memtrack@1.0-service-nvidia: Memtrack Service is ready
+04-20 21:09:09.805   228   228 I health@2.0/: health@2.0/default: Hal starting main loop...
+04-20 21:09:09.821   228   228 I health@2.0/: health@2.0/default Hal is starting up...
+04-20 21:09:09.831   168   168 E SELinux : avc:  denied  { add } for interface=android.hardware.light::ILight sid=u:r:init:s0 pid=229 scontext=u:r:init:s0 tcontext=u:object_r:hal_light_hwservice:s0 tclass=hwservice_manager permissive=1
+04-20 21:09:09.845   229   229 I ServiceManagement: Registered android.hardware.light@2.0::ILight/default (start delay of 341ms)
+04-20 21:09:09.846   229   229 I ServiceManagement: Removing namespace from process name android.hardware.light@2.0-service.mocha to light@2.0-service.mocha.
+04-20 21:09:09.847   229   229 I android.hardware.light@2.0-service.mocha: Light HAL Ready.
+04-20 21:09:09.856   231   231 I android.hardware.power@1.0-service.mocha: Power HAL Service 1.0 for Mocha is starting.
+04-20 21:09:09.856   231   231 I android.hardware.power@1.0-service.mocha: power_init
+04-20 21:09:09.859   227   227 I SoftGatekeeper: called tegra_gatekeeper_open with gate keeper 0xb520a0d8 device 0xb4fa7000
+04-20 21:09:09.865   227   227 I ServiceManagement: Registered android.hardware.gatekeeper@1.0::IGatekeeper/default (start delay of 383ms)
+04-20 21:09:09.782   230   230 I android.hardwar: type=1400 audit(0.0:37): avc: denied { call } for scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+04-20 21:09:09.782   230   230 I android.hardwar: type=1400 audit(0.0:38): avc: denied { transfer } for scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+04-20 21:09:09.866   227   227 I ServiceManagement: Removing namespace from process name android.hardware.gatekeeper@1.0-service to gatekeeper@1.0-service.
+04-20 21:09:09.876   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.drm@1.0::IDrmFactory/default in either framework or device manifest.
+04-20 21:09:09.881   228   228 I ServiceManagement: Registered android.hardware.health@2.0::IHealth/default (start delay of 389ms)
+04-20 21:09:09.882   228   228 I ServiceManagement: Removing namespace from process name android.hardware.health@2.0-service to health@2.0-service.
+04-20 21:09:09.883   228   228 I health@2.0/: health@2.0/default: Hal init done
+04-20 21:09:09.890   168   168 E SELinux : avc:  denied  { add } for interface=android.hardware.power::IPower sid=u:r:init:s0 pid=231 scontext=u:r:init:s0 tcontext=u:object_r:hal_power_hwservice:s0 tclass=hwservice_manager permissive=1
+04-20 21:09:09.902   227   227 I android.hardware.gatekeeper@1.0-service: Registration complete for android.hardware.gatekeeper@1.0::IGatekeeper/default.
+04-20 21:09:09.902   231   231 I ServiceManagement: Registered android.hardware.power@1.0::IPower/default (start delay of 360ms)
+04-20 21:09:09.803   229   229 I android.hardwar: type=1400 audit(0.0:39): avc: denied { write } for name="brightness" dev="sysfs" ino=5880 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:09.903   231   231 I ServiceManagement: Removing namespace from process name android.hardware.power@1.0-service.mocha to power@1.0-service.mocha.
+04-20 21:09:09.904   231   231 I android.hardware.power@1.0-service.mocha: Successfully registered IPower
+04-20 21:09:09.910   219   219 I netdClient: Skipping libnetd_client init since *we* are netd
+04-20 21:09:09.926   224   224 I ServiceManagement: Registered android.hardware.cas@1.1::IMediaCasService/default (start delay of 493ms)
+04-20 21:09:09.928   224   224 I ServiceManagement: Removing namespace from process name android.hardware.cas@1.1-service to cas@1.1-service.
+04-20 21:09:09.942   231   231 I ServiceManagement: Registered vendor.lineage.power@1.0::ILineagePower/default (start delay of 400ms)
+04-20 21:09:09.943   231   231 I android.hardware.power@1.0-service.mocha: Successfully registered ILineagePower
+04-20 21:09:09.943   231   231 I android.hardware.power@1.0-service.mocha: Power Service is ready
+04-20 21:09:09.943   219   219 I netd    : netd 1.0 starting
+04-20 21:09:09.955   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.thermal@1.0::IThermal/default in either framework or device manifest.
+04-20 21:09:09.956   219   219 W Netd    : dlopen(/apex/com.android.resolv/lib64/libnetd_resolv.so) failed: dlopen failed: library "/apex/com.android.resolv/lib64/libnetd_resolv.so" not found
+04-20 21:09:09.996   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.vibrator@1.0::IVibrator/default in either framework or device manifest.
+04-20 21:09:10.031   234   234 I ServiceManagement: Registered android.hardware.usb@1.0::IUsb/default (start delay of 416ms)
+04-20 21:09:10.036   234   234 I ServiceManagement: Removing namespace from process name android.hardware.usb@1.0-service.basic to usb@1.0-service.basic.
+04-20 21:09:10.036   234   234 I /vendor/bin/hw/android.hardware.usb@1.0-service.basic: USB HAL Ready.
+04-20 21:09:10.038   219   219 I Netd    : Loaded resolver library from /apex/com.android.resolv/lib/libnetd_resolv.so
+04-20 21:09:10.046   235   235 D         : Vibrator using timed_output
+04-20 21:09:10.062   235   235 I ServiceManagement: Registered android.hardware.vibrator@1.0::IVibrator/default (start delay of 419ms)
+04-20 21:09:10.064   235   235 I ServiceManagement: Removing namespace from process name android.hardware.vibrator@1.0-service to vibrator@1.0-service.
+04-20 21:09:10.064   235   235 I android.hardware.vibrator@1.0-service: Registration complete for android.hardware.vibrator@1.0::IVibrator/default.
+04-20 21:09:10.154   238   238 I vendor.lineage.trust@1.0-service: Trust HAL service is starting.
+04-20 21:09:10.163   244   244 E libpsi  : No kernel psi monitor support (errno=2)
+04-20 21:09:10.163   244   244 I lowmemorykiller: Using vmpressure for memory pressure detection
+04-20 21:09:10.168   233   233 I ServiceManagement: Registered android.hardware.thermal@1.0::IThermal/default (start delay of 587ms)
+04-20 21:09:10.169   233   233 I ServiceManagement: Removing namespace from process name android.hardware.thermal@1.0-service to thermal@1.0-service.
+04-20 21:09:09.803   229   229 I android.hardwar: type=1400 audit(0.0:40): avc: denied { open } for path="/sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/brightness" dev="sysfs" ino=5880 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:09.804   229   229 I android.hardwar: type=1400 audit(0.0:41): avc: denied { read } for name="max_brightness" dev="sysfs" ino=5882 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.170   233   233 I android.hardware.thermal@1.0-service: Registration complete for android.hardware.thermal@1.0::IThermal/default.
+04-20 21:09:10.176   238   238 I ServiceManagement: Registered vendor.lineage.trust@1.0::IUsbRestrict/default (start delay of 463ms)
+04-20 21:09:10.176   238   238 I ServiceManagement: Removing namespace from process name vendor.lineage.trust@1.0-service to trust@1.0-service.
+04-20 21:09:10.177   238   238 I vendor.lineage.trust@1.0-service: Trust HAL service is ready.
+04-20 21:09:09.821   228   228 I android.hardwar: type=1400 audit(0.0:42): avc: denied { read } for name="type" dev="sysfs" ino=12445 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.225   226   226 I ServiceManagement: Registered android.hardware.drm@1.0::IDrmFactory/default (start delay of 761ms)
+04-20 21:09:10.226   226   226 I ServiceManagement: Removing namespace from process name android.hardware.drm@1.0-service to drm@1.0-service.
+04-20 21:09:10.227   226   226 I         : Registration complete for android.hardware.drm@1.0::IDrmFactory/default.
+04-20 21:09:10.228   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.drm@1.0::ICryptoFactory/default in either framework or device manifest.
+04-20 21:09:10.240   226   226 I ServiceManagement: Registered android.hardware.drm@1.0::ICryptoFactory/default (start delay of 778ms)
+04-20 21:09:10.241   226   226 I ServiceManagement: Removing namespace from process name android.hardware.drm@1.0-service to drm@1.0-service.
+04-20 21:09:10.241   226   226 I         : Registration complete for android.hardware.drm@1.0::ICryptoFactory/default.
+04-20 21:09:09.821   228   228 I android.hardwar: type=1400 audit(0.0:43): avc: denied { open } for path="/sys/devices/platform/psy_extcon.3/power_supply/ac/type" dev="sysfs" ino=12445 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:09.821   228   228 I android.hardwar: type=1400 audit(0.0:44): avc: denied { getattr } for path="/sys/devices/platform/psy_extcon.3/power_supply/ac/type" dev="sysfs" ino=12445 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.002   153   153 I init    : type=1400 audit(0.0:45): avc: denied { write } for name="lowmem_reserve_ratio" dev="proc" ino=2016 scontext=u:r:vendor_init:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=1
+04-20 21:09:10.265   236   236 I android.hardware.wifi@1.0-service.legacy: Wifi Hal is booting up...
+04-20 21:09:10.275   236   236 I ServiceManagement: Registered android.hardware.wifi@1.3::IWifi/default (start delay of 603ms)
+04-20 21:09:10.276   236   236 I ServiceManagement: Removing namespace from process name android.hardware.wifi@1.0-service.legacy to wifi@1.0-service.legacy.
+04-20 21:09:10.166   246   246 I init    : type=1400 audit(0.0:46): avc: denied { execute_no_trans } for path="/system/bin/init.btloader.sh" dev="mmcblk0p26" ino=547 scontext=u:r:init:s0 tcontext=u:object_r:system_file:s0 tclass=file permissive=1
+04-20 21:09:10.251   248   248 I getprop : type=1400 audit(0.0:47): avc: denied { write } for path="pipe:[14090]" dev="pipefs" ino=14090 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:10.291   248   248 I getprop : type=1400 audit(0.0:48): avc: denied { read } for name="u:object_r:serialno_prop:s0" dev="tmpfs" ino=1256 scontext=u:r:toolbox:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+04-20 21:09:10.291   248   248 I getprop : type=1400 audit(0.0:49): avc: denied { open } for path="/dev/__properties__/u:object_r:serialno_prop:s0" dev="tmpfs" ino=1256 scontext=u:r:toolbox:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+04-20 21:09:10.292   248   248 I getprop : type=1400 audit(0.0:50): avc: denied { getattr } for path="/dev/__properties__/u:object_r:serialno_prop:s0" dev="tmpfs" ino=1256 scontext=u:r:toolbox:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+04-20 21:09:10.292   248   248 I getprop : type=1400 audit(0.0:51): avc: denied { getattr } for path="pipe:[14090]" dev="pipefs" ino=14090 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:10.305   251   251 I md5sum  : type=1400 audit(0.0:52): avc: denied { read } for path="pipe:[11612]" dev="pipefs" ino=11612 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:10.391   252   252 I mount   : type=1400 audit(0.0:53): avc: denied { getattr } for path="/cache" dev="mmcblk0p28" ino=2 scontext=u:r:toolbox:s0 tcontext=u:object_r:cache_file:s0 tclass=dir permissive=1
+04-20 21:09:10.392   252   252 I mount   : type=1400 audit(0.0:54): avc: denied { dac_override } for capability=1 scontext=u:r:toolbox:s0 tcontext=u:r:toolbox:s0 tclass=capability permissive=1
+04-20 21:09:10.392   252   252 I mount   : type=1400 audit(0.0:55): avc: denied { getattr } for path="/storage" dev="tmpfs" ino=6442 scontext=u:r:toolbox:s0 tcontext=u:object_r:storage_file:s0 tclass=dir permissive=1
+04-20 21:09:10.482   220   220 D AndroidRuntime: >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+04-20 21:09:10.489   254   254 W libc    : Unable to set property "ro.bt.bdaddr_path" to "/vendor/etc/mocha_btmacaddr.txt": error code: 0xb
+04-20 21:09:10.485   254   254 I setprop : type=1400 audit(0.0:56): avc: denied { write } for name="property_service" dev="tmpfs" ino=1281 scontext=u:r:toolbox:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1
+04-20 21:09:10.486   254   254 I setprop : type=1400 audit(0.0:57): avc: denied { connectto } for path="/dev/socket/property_service" scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=unix_stream_socket permissive=1
+04-20 21:09:10.497   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+04-20 21:09:10.501   245   245 I SurfaceFlinger: Using HWComposer service: 'default'
+04-20 21:09:10.504   245   245 I SurfaceFlinger: SurfaceFlinger is starting
+04-20 21:09:10.507   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.1::ISurfaceFlingerConfigs/default in either framework or device manifest.
+04-20 21:09:10.507   245   245 I SurfaceFlinger: Disabling backpressure propagation
+04-20 21:09:10.507   245   245 I SurfaceFlinger: Treble testing override: 'false'
+04-20 21:09:10.510   245   245 I SurfaceFlinger: SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+04-20 21:09:10.510   245   245 I SurfaceFlinger: Phase offset NS: 1000000
+04-20 21:09:10.510   245   245 D RenderEngine: RenderEngine GLES Backend
+04-20 21:09:10.582   220   220 I AndroidRuntime: Using default boot image
+04-20 21:09:10.583   220   220 I AndroidRuntime: Leaving lock profiling enabled
+04-20 21:09:10.591   220   220 I zygote  : option[0]=-Xzygote
+04-20 21:09:10.591   220   220 I zygote  : option[1]=-Xcheck:jni
+04-20 21:09:10.591   220   220 I zygote  : option[2]=exit
+04-20 21:09:10.592   220   220 I zygote  : option[3]=vfprintf
+04-20 21:09:10.592   220   220 I zygote  : option[4]=sensitiveThread
+04-20 21:09:10.592   220   220 I zygote  : option[5]=-verbose:gc
+04-20 21:09:10.592   220   220 I zygote  : option[6]=-Xms8m
+04-20 21:09:10.592   220   220 I zygote  : option[7]=-Xmx512m
+04-20 21:09:10.592   220   220 I zygote  : option[8]=-XX:HeapGrowthLimit=192m
+04-20 21:09:10.592   220   220 I zygote  : option[9]=-XX:HeapMinFree=4m
+04-20 21:09:10.592   220   220 I zygote  : option[10]=-XX:HeapMaxFree=16m
+04-20 21:09:10.592   220   220 I zygote  : option[11]=-XX:HeapTargetUtilization=0.7
+04-20 21:09:10.592   220   220 I zygote  : option[12]=-Xusejit:true
+04-20 21:09:10.592   220   220 I zygote  : option[13]=-Xjitsaveprofilinginfo
+04-20 21:09:10.592   220   220 I zygote  : option[14]=-XX:MadviseRandomAccess:true
+04-20 21:09:10.592   220   220 I zygote  : option[15]=-XX:LowMemoryMode
+04-20 21:09:10.592   220   220 I zygote  : option[16]=-XjdwpOptions:suspend=n,server=y
+04-20 21:09:10.592   220   220 I zygote  : option[17]=-XjdwpProvider:default
+04-20 21:09:10.592   220   220 I zygote  : option[18]=-Xlockprofthreshold:500
+04-20 21:09:10.593   220   220 I zygote  : option[19]=-Ximage-compiler-option
+04-20 21:09:10.593   220   220 I zygote  : option[20]=--runtime-arg
+04-20 21:09:10.593   220   220 I zygote  : option[21]=-Ximage-compiler-option
+04-20 21:09:10.593   220   220 I zygote  : option[22]=-Xms64m
+04-20 21:09:10.593   220   220 I zygote  : option[23]=-Ximage-compiler-option
+04-20 21:09:10.593   220   220 I zygote  : option[24]=--runtime-arg
+04-20 21:09:10.593   220   220 I zygote  : option[25]=-Ximage-compiler-option
+04-20 21:09:10.593   220   220 I zygote  : option[26]=-Xmx64m
+04-20 21:09:10.593   220   220 I zygote  : option[27]=-Ximage-compiler-option
+04-20 21:09:10.593   220   220 I zygote  : option[28]=--compiler-filter=verify-at-runtime
+04-20 21:09:10.593   220   220 I zygote  : option[29]=-Ximage-compiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[30]=--profile-file=/system/etc/boot-image.prof
+04-20 21:09:10.594   220   220 I zygote  : option[31]=-Ximage-compiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[32]=--compiler-filter=speed-profile
+04-20 21:09:10.594   220   220 I zygote  : option[33]=-Xcompiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[34]=--runtime-arg
+04-20 21:09:10.594   220   220 I zygote  : option[35]=-Xcompiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[36]=-Xms64m
+04-20 21:09:10.594   220   220 I zygote  : option[37]=-Xcompiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[38]=--runtime-arg
+04-20 21:09:10.594   220   220 I zygote  : option[39]=-Xcompiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[40]=-Xmx512m
+04-20 21:09:10.594   220   220 I zygote  : option[41]=-Ximage-compiler-option
+04-20 21:09:10.594   220   220 I zygote  : option[42]=--instruction-set-variant=cortex-a15
+04-20 21:09:10.594   220   220 I zygote  : option[43]=-Xcompiler-option
+04-20 21:09:10.595   220   220 I zygote  : option[44]=--instruction-set-variant=cortex-a15
+04-20 21:09:10.595   220   220 I zygote  : option[45]=-Ximage-compiler-option
+04-20 21:09:10.595   220   220 I zygote  : option[46]=--instruction-set-features=default
+04-20 21:09:10.595   220   220 I zygote  : option[47]=-Xcompiler-option
+04-20 21:09:10.595   220   220 I zygote  : option[48]=--instruction-set-features=default
+04-20 21:09:10.595   220   220 I zygote  : option[49]=-Duser.locale=en-US
+04-20 21:09:10.605   245   245 I surfaceflinger: type=1400 audit(0.0:58): avc: denied { read write } for name="nvhost-ctrl" dev="tmpfs" ino=1459 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.605   245   245 I surfaceflinger: type=1400 audit(0.0:59): avc: denied { open } for path="/dev/nvhost-ctrl" dev="tmpfs" ino=1459 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.605   245   245 I surfaceflinger: type=1400 audit(0.0:60): avc: denied { ioctl } for path="/dev/nvhost-ctrl" dev="tmpfs" ino=1459 ioctlcmd=4807 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.595   220   220 I zygote  : option[50]=--cpu-abilist=armeabi-v7a,armeabi
+04-20 21:09:10.595   220   220 I zygote  : option[51]=-Xcompiler-option
+04-20 21:09:10.595   220   220 I zygote  : option[52]=--generate-mini-debug-info
+04-20 21:09:10.595   220   220 I zygote  : option[53]=-Xcore-platform-api-policy:just-warn
+04-20 21:09:10.596   220   220 I zygote  : option[54]=-Xfingerprint:Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys
+04-20 21:09:10.607   245   245 D libEGL  : loaded /vendor/lib/egl/libEGL_tegra.so
+04-20 21:09:10.620   220   220 W zygote  : Could not reserve sentinel fault page
+04-20 21:09:10.620   220   220 I zygote  : Core platform API reporting enabled, enforcing=false
+04-20 21:09:10.791     1     1 I init    : type=1400 audit(0.0:61): avc: denied { setattr } for name="scheduler" dev="sysfs" ino=12317 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.795     1     1 I init    : type=1400 audit(0.0:62): avc: denied { mounton } for path="/apex/com.android.media.swcodec/etc/ld.config.txt" dev="mmcblk0p26" ino=116 scontext=u:r:init:s0 tcontext=u:object_r:system_file:s0 tclass=file permissive=1
+04-20 21:09:10.816   245   245 D libEGL  : loaded /vendor/lib/egl/libGLESv1_CM_tegra.so
+04-20 21:09:10.835   245   245 D libEGL  : loaded /vendor/lib/egl/libGLESv2_tegra.so
+04-20 21:09:10.882   269   269 I init    : type=1400 audit(0.0:63): avc: denied { create } for name="phsd" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=1
+04-20 21:09:10.909   240   240 I FastMixerState: sMaxFastTracks = 8
+04-20 21:09:10.883   269   269 I init    : type=1400 audit(0.0:64): avc: denied { setattr } for name="phsd" dev="tmpfs" ino=11783 scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=1
+04-20 21:09:10.884   269   269 I init    : type=1400 audit(0.0:65): avc: denied { execute_no_trans } for path="/system/vendor/bin/ussrd" dev="mmcblk0p26" ino=3113 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+04-20 21:09:10.902   245   245 I surfaceflinger: type=1400 audit(0.0:66): avc: denied { read } for name="tegra_chip_id" dev="sysfs" ino=1769 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.902   245   245 I surfaceflinger: type=1400 audit(0.0:67): avc: denied { open } for path="/sys/module/tegra_fuse/parameters/tegra_chip_id" dev="sysfs" ino=1769 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.918   265   265 W perfetto: service.cc:65 Started traced, listening on /dev/socket/traced_producer /dev/socket/traced_consumer
+04-20 21:09:10.924   240   240 V MediaUtils: physMem: 2022432768
+04-20 21:09:10.924   240   240 V MediaUtils: requested limit: 404486540
+04-20 21:09:10.924   240   240 I libc    : malloc_limit: Allocation limit enabled, max size 404486540 bytes
+04-20 21:09:10.925   240   240 I audioserver: ServiceManager: 0xad00e320
+04-20 21:09:10.925   240   240 W BatteryNotifier: batterystats service unavailable!
+04-20 21:09:10.927   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio@5.0::IDevicesFactory/default in either framework or device manifest.
+04-20 21:09:10.929   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio@4.0::IDevicesFactory/default in either framework or device manifest.
+04-20 21:09:10.930   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio@2.0::IDevicesFactory/default in either framework or device manifest.
+04-20 21:09:10.931   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio.effect@5.0::IEffectsFactory/default in either framework or device manifest.
+04-20 21:09:10.932   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio.effect@4.0::IEffectsFactory/default in either framework or device manifest.
+04-20 21:09:10.934   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.audio.effect@2.0::IEffectsFactory/default in either framework or device manifest.
+--------- beginning of crash
+04-20 21:09:10.934   240   240 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 240 (audioserver), pid 240 (audioserver)
+04-20 21:09:10.904   245   245 I surfaceflinger: type=1400 audit(0.0:68): avc: denied { read write } for name="nvmap" dev="tmpfs" ino=6414 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.904   245   245 I surfaceflinger: type=1400 audit(0.0:69): avc: denied { open } for path="/dev/nvmap" dev="tmpfs" ino=6414 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.907   245   245 I surfaceflinger: type=1400 audit(0.0:70): avc: denied { getattr } for path="/sys/devices/soc0/family" dev="sysfs" ino=247 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.907   245   245 I surfaceflinger: type=1400 audit(0.0:71): avc: denied { ioctl } for path="/dev/nvhost-ctrl-gpu" dev="tmpfs" ino=1462 ioctlcmd=4705 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:10.949   273   273 I chown   : type=1400 audit(0.0:72): avc: denied { getattr } for path="/sys/devices/virtual/thermal/thermal_zone0/temp" dev="sysfs" ino=5406 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.951   273   273 I chown   : type=1400 audit(0.0:73): avc: denied { setattr } for name="temp" dev="sysfs" ino=5406 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:10.951   273   273 I chown   : type=1400 audit(0.0:74): avc: denied { chown } for capability=0 scontext=u:r:toolbox:s0 tcontext=u:r:toolbox:s0 tclass=capability permissive=1
+04-20 21:09:10.958   266   266 I perfetto: probes.cc:56 Starting /system/bin/traced_probes service
+04-20 21:09:10.976   266   266 I perfetto: probes_producer.cc:88 Connected to the service
+04-20 21:09:10.985   219   219 D TetherController: Setting IP forward enable = 0
+04-20 21:09:10.987   219   219 D FirewallController: Could not read /proc/self/uid_map, max uid defaulting to 4294967294
+04-20 21:09:11.022   245   245 I surfaceflinger: type=1400 audit(0.0:75): avc: denied { ioctl } for path="/dev/nvhost-ctrl-gpu" dev="tmpfs" ino=1462 ioctlcmd=4702 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:11.041   245   245 D NvOsDebugPrintf: NvRmPrivGetChipPlatform: Could not read platform information 
+04-20 21:09:11.041   245   245 D NvOsDebugPrintf: Expected on kernels without fuse support, using silicon
+04-20 21:09:11.045   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+04-20 21:09:11.046   245   245 W RenderEngine: no suitable EGLConfig found, trying a simpler query
+04-20 21:09:11.047   245   245 I RenderEngine: EGL information:
+04-20 21:09:11.047   245   245 I RenderEngine: vendor    : Android
+04-20 21:09:11.047   245   245 I RenderEngine: version   : 1.4 Android META-EGL
+04-20 21:09:11.047   245   245 I RenderEngine: extensions: EGL_KHR_get_all_proc_addresses EGL_ANDROID_presentation_time EGL_KHR_swap_buffers_with_damage EGL_ANDROID_get_native_client_buffer EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_frame_timestamps EGL_EXT_surface_SMPTE2086_metadata EGL_EXT_surface_CTA861_3_metadata EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_reusable_sync EGL_KHR_fence_sync EGL_KHR_create_context EGL_KHR_config_attribs EGL_KHR_surfaceless_context EGL_KHR_stream EGL_KHR_stream_fifo EGL_KHR_stream_producer_eglsurface EGL_KHR_stream_consumer_gltexture EGL_EXT_create_context_robustness EGL_NV_system_time EGL_ANDROID_image_native_buffer EGL_KHR_wait_sync EGL_ANDROID_recordable EGL_EXT_buffer_age EGL_IMG_context_priority 
+04-20 21:09:11.047   245   245 I RenderEngine: Client API: OpenGL_ES
+04-20 21:09:11.047   245   245 I RenderEngine: EGLSurface: 8-8-8-8, config=0xcaf32b
+04-20 21:09:11.027   245   245 I surfaceflinger: type=1400 audit(0.0:76): avc: denied { read } for name="ptimer_scale_factor" dev="sysfs" ino=6907 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.027   245   245 I surfaceflinger: type=1400 audit(0.0:77): avc: denied { open } for path="/sys/devices/platform/host1x/gk20a.0/ptimer_scale_factor" dev="sysfs" ino=6907 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.027   245   245 I surfaceflinger: type=1400 audit(0.0:78): avc: denied { getattr } for path="/sys/devices/platform/host1x/gk20a.0/ptimer_scale_factor" dev="sysfs" ino=6907 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.035   245   245 I surfaceflinger: type=1400 audit(0.0:79): avc: denied { read write } for name="nvhost-vic" dev="tmpfs" ino=6376 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:11.035   245   245 I surfaceflinger: type=1400 audit(0.0:80): avc: denied { open } for path="/dev/nvhost-vic" dev="tmpfs" ino=6376 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:11.076   283   283 I chmod   : type=1400 audit(0.0:81): avc: denied { fowner } for capability=3 scontext=u:r:toolbox:s0 tcontext=u:r:toolbox:s0 tclass=capability permissive=1
+04-20 21:09:11.086   296   296 I ussrd   : type=1400 audit(0.0:82): avc: denied { lock } for path="/data/misc/phs/phsd.pid" dev="mmcblk0p29" ino=122696 scontext=u:r:init:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+04-20 21:09:11.160   297   297 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstone
+04-20 21:09:11.162   245   245 I RenderEngine: OpenGL ES informations:
+04-20 21:09:11.162   245   245 I RenderEngine: vendor    : NVIDIA Corporation
+04-20 21:09:11.162   245   245 I RenderEngine: renderer  : NVIDIA Tegra
+04-20 21:09:11.162   245   245 I RenderEngine: version   : OpenGL ES 3.1 NVIDIA 343.00
+04-20 21:09:11.162   245   245 I RenderEngine: extensions: GL_EXT_debug_marker GL_EXT_blend_minmax GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_copy_image GL_EXT_debug_label GL_EXT_draw_buffers_indexed GL_EXT_frag_depth GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_gpu_shader5 GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_primitive_bounding_box GL_EXT_robustness GL_EXT_separate_shader_objects GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_shader_io_blocks GL_EXT_shadow_samplers GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map_array GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_sRGB_decode GL_EXT_texture_storage GL_EXT_texture_view GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_texture_compression_astc_ldr GL_NV_bgr GL_NV_bindless_texture GL_NV_blend_equation_a
+04-20 21:09:11.162   245   245 I RenderEngine: GL_MAX_TEXTURE_SIZE = 16384
+04-20 21:09:11.162   245   245 I RenderEngine: GL_MAX_VIEWPORT_DIMS = 16384
+04-20 21:09:11.163   297   297 E libc    : failed to connect to tombstoned: No such file or directory
+04-20 21:09:11.163   297   297 I crash_dump32: performing dump of process 240 (target tid = 240)
+04-20 21:09:11.163   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.composer@2.1::IComposer/default in either framework or device manifest.
+04-20 21:09:11.164   245   245 F HwcComposer: failed to get hwcomposer service
+04-20 21:09:11.164   245   245 F libc    : Fatal signal 6 (SIGABRT), code -1 (SI_QUEUE) in tid 245 (surfaceflinger), pid 245 (surfaceflinger)
+04-20 21:09:11.168   219   219 I netd    : Creating child chains: 121.6ms
+04-20 21:09:11.169   219   219 I netd    : Setting up OEM hooks: 0.3ms
+04-20 21:09:11.200   282   282 I installd: installd firing up
+04-20 21:09:11.160   245   245 I surfaceflinger: type=1400 audit(0.0:83): avc: denied { execmem } for scontext=u:r:surfaceflinger:s0 tcontext=u:r:surfaceflinger:s0 tclass=process permissive=1
+04-20 21:09:11.222   282   282 I installd: type=1400 audit(0.0:84): avc: denied { write } for name="tasks" dev="tmpfs" ino=13350 scontext=u:r:installd:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.230   271   271 I adb_root: type=1400 audit(0.0:85): avc: denied { write } for name="tasks" dev="tmpfs" ino=13350 scontext=u:r:adbroot:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.230   271   271 I adb_root: type=1400 audit(0.0:86): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=13350 scontext=u:r:adbroot:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.236   282   282 I installd: type=1400 audit(0.0:87): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=13350 scontext=u:r:installd:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.238   300   300 I chown   : type=1400 audit(0.0:88): avc: denied { chown } for capability=0 scontext=u:r:toolbox:s0 tcontext=u:r:toolbox:s0 tclass=capability permissive=1
+04-20 21:09:11.247   290   290 I iptables-restor: type=1400 audit(0.0:89): avc: denied { module_request } for kmod="ipt_TCPMSS" scontext=u:r:netd:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+04-20 21:09:11.239   219   219 I netd    : Setting up FirewallController hooks: 69.8ms
+04-20 21:09:11.249   219   219 W IptablesRestoreController: iptables-restore process 290 terminated status=256
+04-20 21:09:11.249   219   219 E IptablesRestoreController: iptables error:
+04-20 21:09:11.249   219   219 E IptablesRestoreController: ------- COMMAND -------
+04-20 21:09:11.249   219   219 E IptablesRestoreController: *mangle
+04-20 21:09:11.249   219   219 E IptablesRestoreController: -A tetherctrl_mangle_FORWARD -p tcp --tcp-flags SYN SYN -j TCPMSS --clamp-mss-to-pmtu
+04-20 21:09:11.249   219   219 E IptablesRestoreController: COMMIT
+04-20 21:09:11.249   219   219 E IptablesRestoreController: 
+04-20 21:09:11.249   219   219 E IptablesRestoreController: -------  ERROR -------
+04-20 21:09:11.249   219   219 E IptablesRestoreController: iptables-restore: line 140 failed
+04-20 21:09:11.249   219   219 E IptablesRestoreController: ----------------------
+04-20 21:09:11.249   219   219 I netd    : Setting up TetherController hooks: 10.8ms
+04-20 21:09:11.268   297   297 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+04-20 21:09:11.268   297   297 F DEBUG   : LineageOS Version: '17.1-20260420-UNOFFICIAL-mocha'
+04-20 21:09:11.268   297   297 F DEBUG   : Build fingerprint: 'Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys'
+04-20 21:09:11.268   297   297 F DEBUG   : Revision: '0'
+04-20 21:09:11.268   297   297 F DEBUG   : ABI: 'arm'
+04-20 21:09:11.269   297   297 F DEBUG   : Timestamp: 2026-04-20 21:09:11+0000
+04-20 21:09:11.269   297   297 F DEBUG   : pid: 240, tid: 240, name: audioserver  >>> /system/bin/audioserver <<<
+04-20 21:09:11.269   297   297 F DEBUG   : uid: 1041
+04-20 21:09:11.269   297   297 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0
+04-20 21:09:11.269   297   297 F DEBUG   : Cause: null pointer dereference
+04-20 21:09:11.269   297   297 F DEBUG   :     r0  00000000  r1  00000001  r2  00000000  r3  00000000
+04-20 21:09:11.269   297   297 F DEBUG   :     r4  ad037000  r5  bef6f4d0  r6  ad03722c  r7  ab2e26e5
+04-20 21:09:11.269   297   297 F DEBUG   :     r8  ad03704c  r9  ad037094  r10 abde1260  r11 ad037010
+04-20 21:09:11.269   297   297 F DEBUG   :     ip  ab2e9664  sp  bef6f4d0  lr  ab2e27db  pc  ab594bea
+04-20 21:09:11.274   314   314 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstone
+04-20 21:09:11.275   314   314 E libc    : failed to connect to tombstoned: Connection refused
+04-20 21:09:11.275   314   314 I crash_dump32: performing dump of process 245 (target tid = 245)
+04-20 21:09:11.284   314   314 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+04-20 21:09:11.284   314   314 F DEBUG   : LineageOS Version: '17.1-20260420-UNOFFICIAL-mocha'
+04-20 21:09:11.284   314   314 F DEBUG   : Build fingerprint: 'Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys'
+04-20 21:09:11.284   314   314 F DEBUG   : Revision: '0'
+04-20 21:09:11.284   314   314 F DEBUG   : ABI: 'arm'
+04-20 21:09:11.284   314   314 F DEBUG   : Timestamp: 2026-04-20 21:09:11+0000
+04-20 21:09:11.284   314   314 F DEBUG   : pid: 245, tid: 245, name: surfaceflinger  >>> /system/bin/surfaceflinger <<<
+04-20 21:09:11.284   314   314 F DEBUG   : uid: 1000
+04-20 21:09:11.284   314   314 F DEBUG   : signal 6 (SIGABRT), code -1 (SI_QUEUE), fault addr --------
+04-20 21:09:11.285   314   314 F DEBUG   : Abort message: 'failed to get hwcomposer service'
+04-20 21:09:11.285   314   314 F DEBUG   :     r0  00000000  r1  000000f5  r2  00000006  r3  bebc3030
+04-20 21:09:11.285   314   314 F DEBUG   :     r4  bebc3044  r5  bebc3028  r6  000000f5  r7  0000016b
+04-20 21:09:11.285   314   314 F DEBUG   :     r8  bebc3040  r9  bebc3030  r10 bebc3060  r11 bebc3050
+04-20 21:09:11.285   314   314 F DEBUG   :     ip  000000f5  sp  bebc3000  lr  a8e8ab0b  pc  a8e8ab1e
+04-20 21:09:11.293   299   299 I gatekeeperd: Starting gatekeeperd...
+04-20 21:09:11.295   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.gatekeeper@1.0::IGatekeeper/default in either framework or device manifest.
+04-20 21:09:11.295   299   299 W gatekeeperd: falling back to software GateKeeper
+04-20 21:09:11.307   219   219 I netd    : Setting up BandwidthController hooks: 57.4ms
+04-20 21:09:11.307   219   219 I netd    : Setting up IdletimerController hooks: 0.2ms
+04-20 21:09:11.326   219   219 W IptablesRestoreController: iptables-restore process 316 terminated status=256
+04-20 21:09:11.326   219   219 E IptablesRestoreController: iptables error:
+04-20 21:09:11.326   219   219 E IptablesRestoreController: ------- COMMAND -------
+04-20 21:09:11.326   219   219 E IptablesRestoreController: *filter
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_penalty_log -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_penalty_log -j NFLOG --nflog-group 0
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_penalty_reject -j CONNMARK --or-mark 0x2000000
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_penalty_reject -j NFLOG --nflog-group 0
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_penalty_reject -j REJECT
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x2000000/0x2000000 -j REJECT
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x1000000/0x1000000 -j RETURN
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -p tcp -m u32 --u32 "0>>22&0x3C@ 12>>26&0x3C@ 0&0xFFFF0000=0x16030000 &&0>>22&0x3C@ 12>>26&0x3C@ 4&0x00FF0000=0x00010000" -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -p udp -m u32 --u32 "0>>22&0x3C@ 8&0xFFFF0000=0x16FE0000 &&0>>22&0x3C@ 20&0x00FF0000=0x00010000" -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x1000000/0x1000000 -j RETURN
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -p tcp -m state --state ESTABLISHED -m u32 --u32 "0>>22&0x3C@ 12>>26&0x3C@ 0&0x0=0x0" -j st_clear_caught
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -A st_clear_detect -p udp -j st_clear_caught
+04-20 21:09:11.326   219   219 E IptablesRestoreController: COMMIT
+04-20 21:09:11.326   219   219 E IptablesRestoreController: 
+04-20 21:09:11.326   219   219 E IptablesRestoreController: -------  ERROR -------
+04-20 21:09:11.326   219   219 E IptablesRestoreController: iptables-restore: line 43 f
+04-20 21:09:11.331   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.usb.gadget@1.0::IUsbGadget/default in either framework or device manifest.
+04-20 21:09:11.332   219   219 W IptablesRestoreController: iptables-restore process 292 terminated status=256
+04-20 21:09:11.332   219   219 E IptablesRestoreController: iptables error:
+04-20 21:09:11.332   219   219 E IptablesRestoreController: ------- COMMAND -------
+04-20 21:09:11.332   219   219 E IptablesRestoreController: *filter
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_penalty_log -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_penalty_log -j NFLOG --nflog-group 0
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_penalty_reject -j CONNMARK --or-mark 0x2000000
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_penalty_reject -j NFLOG --nflog-group 0
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_penalty_reject -j REJECT
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x2000000/0x2000000 -j REJECT
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x1000000/0x1000000 -j RETURN
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -p tcp -m u32 --u32 "52>>26&0x3C@ 40&0xFFFF0000=0x16030000 &&52>>26&0x3C@ 44&0x00FF0000=0x00010000" -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -p udp -m u32 --u32 "48&0xFFFF0000=0x16FE0000 &&60&0x00FF0000=0x00010000" -j CONNMARK --or-mark 0x1000000
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -m connmark --mark 0x1000000/0x1000000 -j RETURN
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -p tcp -m state --state ESTABLISHED -m u32 --u32 "52>>26&0x3C@ 40&0x0=0x0" -j st_clear_caught
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -A st_clear_detect -p udp -j st_clear_caught
+04-20 21:09:11.332   219   219 E IptablesRestoreController: COMMIT
+04-20 21:09:11.332   219   219 E IptablesRestoreController: 
+04-20 21:09:11.332   219   219 E IptablesRestoreController: -------  ERROR -------
+04-20 21:09:11.332   219   219 E IptablesRestoreController: ip6tables-restore: line 173 failed
+04-20 21:09:11.332   219   219 E IptablesRestoreController: ----------------------
+04-20 21:09:11.333   219   219 I netd    : Setting up StrictController hooks: 25.7ms
+04-20 21:09:11.333   219   219 I ClatdController: Pre-4.9 kernel or pre-P api shipping level - disabling clat ebpf.
+04-20 21:09:11.333   219   219 I netd    : Initializing ClatdController: 0.0ms
+04-20 21:09:11.333   219   219 I netd    : Initializing traffic control: 0.1ms
+04-20 21:09:11.333   309   309 I usbd    : Usb HAL not found
+04-20 21:09:11.363   302   302 I /system/bin/tombstoned: tombstoned successfully initialized
+04-20 21:09:11.365   294   294 I wificond: wificond is starting up...
+04-20 21:09:11.388   315   315 I chmod   : type=1400 audit(0.0:90): avc: denied { getattr } for path="/sys/devices/virtual/thermal/thermal_zone0/trip_point_0_temp" dev="sysfs" ino=5408 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.388   315   315 I chmod   : type=1400 audit(0.0:91): avc: denied { setattr } for name="trip_point_0_temp" dev="sysfs" ino=5408 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.388   315   315 I chmod   : type=1400 audit(0.0:92): avc: denied { fowner } for capability=3 scontext=u:r:toolbox:s0 tcontext=u:r:toolbox:s0 tclass=capability permissive=1
+04-20 21:09:11.420   264   322 I adbd    : initializing functionfs
+04-20 21:09:11.421   264   322 I adbd    : opening control endpoint /dev/usb-ffs/adb/ep0
+04-20 21:09:11.432   264   322 I adbd    : functionfs successfully initialized
+04-20 21:09:11.433   264   322 I adbd    : registering usb transport
+04-20 21:09:11.438   264   323 I adbd    : <unknown>: read thread spawning
+04-20 21:09:11.441   264   324 I adbd    : <unknown>: write thread spawning
+04-20 21:09:11.449   286   286 I mediaserver: ServiceManager: 0xab30e120
+04-20 21:09:11.473   289   289 I ServiceManagement: Registered android.frameworks.stats@1.0::IStats/default (start delay of 491ms)
+04-20 21:09:11.474   289   289 W statsd  : statscompanion service unavailable!
+04-20 21:09:11.481   289   289 I statsd  : Statsd starts to listen to socket.
+04-20 21:09:11.496   220   220 D ICU     : Time zone APEX file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+04-20 21:09:11.500   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.keymaster@4.0::IKeymasterDevice/default in either framework or device manifest.
+04-20 21:09:11.503   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.keymaster@3.0::IKeymasterDevice/default in either framework or device manifest.
+04-20 21:09:11.504   284   284 F keystore: keystore_main.cpp:70] Check failed: device Failed to get service for "android.hardware.keymaster@3.0::IKeymasterDevice" with interface name "default"
+04-20 21:09:11.505   284   284 F libc    : Fatal signal 6 (SIGABRT), code -1 (SI_QUEUE) in tid 284 (keystore), pid 284 (keystore)
+04-20 21:09:11.517   219   219 I netd    : Enabling bandwidth control: 184.2ms
+04-20 21:09:11.518   219   219 I netd    : type=1400 audit(0.0:93): avc: denied { module_request } for kmod="rtnl-link-xfrm" scontext=u:r:netd:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+04-20 21:09:11.519   219   219 I netd    : Initializing RouteController: 2.1ms
+04-20 21:09:11.519   219   219 D XfrmController: XfrmController::ipSecAddXfrmInterface, line=1379
+04-20 21:09:11.519   219   219 D XfrmController: XfrmController::ipSecRemoveTunnelInterface, line=1592
+04-20 21:09:11.520   219   219 D XfrmController: deviceName=ipsec_test
+04-20 21:09:11.520   219   219 W XfrmController: Could not get a new socket, line=240
+04-20 21:09:11.520   219   219 E netd    : Failed to initialize XfrmController (Status[code: 93, msg: "[Protocol not supported] : Could not open netlink socket"])
+04-20 21:09:11.521   219   219 I netd    : Initializing XfrmController: 1.4ms
+04-20 21:09:11.522   219   219 I libnetd_resolv: resolv_init: Initializing resolver
+04-20 21:09:11.523   219   219 D MDnsDS  : MDnsSdListener::Hander starting up
+04-20 21:09:11.524   219   219 I netd    : Registering NetdNativeService: 0.3ms
+04-20 21:09:11.533   219   219 I ServiceManagement: Registered android.system.net.netd@1.1::INetd/default (start delay of 2210ms)
+04-20 21:09:11.534   219   219 I netd    : Registering NetdHwService: 10.5ms
+04-20 21:09:11.534   219   219 I netd    : Netd started in 1591ms
+04-20 21:09:11.541   219   342 D MDnsDS  : MDnsSdListener starting to monitor
+04-20 21:09:11.541   219   342 D MDnsDS  : Going to poll with pollCount 1
+04-20 21:09:11.548   219   219 I netd    : type=1400 audit(0.0:94): avc: denied { write } for name="tasks" dev="tmpfs" ino=13350 scontext=u:r:netd:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.548   219   219 I netd    : type=1400 audit(0.0:95): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=13350 scontext=u:r:netd:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:11.548   346   346 I crash_dump32: type=1400 audit(0.0:96): avc: denied { ptrace } for scontext=u:r:crash_dump:s0 tcontext=u:r:keystore:s0 tclass=process permissive=1
+04-20 21:09:11.565   347   347 I cat     : type=1400 audit(0.0:97): avc: denied { write } for path="pipe:[12057]" dev="pipefs" ino=12057 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:11.583   314   314 F DEBUG   : 
+04-20 21:09:11.583   314   314 F DEBUG   : backtrace:
+04-20 21:09:11.583   314   314 F DEBUG   :       #00 pc 0005eb1e  /apex/com.android.runtime/lib/bionic/libc.so (abort+166) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:11.583   314   314 F DEBUG   :       #01 pc 00005abf  /system/lib/liblog.so (__android_log_assert+174) (BuildId: cf83fe90d12bfacf1b57141b77ceb8f2)
+04-20 21:09:11.584   314   314 F DEBUG   :       #02 pc 0005578b  /system/lib/libsurfaceflinger.so (android::Hwc2::impl::Composer::Composer(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&)+714) (BuildId: 5ec9a1d17e038f1ba9ac43abeba16d0c)
+04-20 21:09:11.584   314   314 F DEBUG   :       #03 pc 000b7c81  /system/lib/libsurfaceflinger.so (_ZZN7android14surfaceflinger20createSurfaceFlingerEvEN7Factory16createHWComposerERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE$f8e1ddd5c1a01af33e02be699775c0a6+28) (BuildId: 5ec9a1d17e038f1ba9ac43abeba16d0c)
+04-20 21:09:11.585   314   314 F DEBUG   :       #04 pc 0008a2b5  /system/lib/libsurfaceflinger.so (android::SurfaceFlinger::init()+200) (BuildId: 5ec9a1d17e038f1ba9ac43abeba16d0c)
+04-20 21:09:11.585   314   314 F DEBUG   :       #05 pc 00003145  /system/bin/surfaceflinger (main+256) (BuildId: e5a8e1059620f13d13c91c282d9819d9)
+04-20 21:09:11.585   314   314 F DEBUG   :       #06 pc 0005910f  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+66) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:11.586   314   314 F DEBUG   :       #07 pc 0000302f  /system/bin/surfaceflinger (_start_main+38) (BuildId: e5a8e1059620f13d13c91c282d9819d9)
+04-20 21:09:11.586   314   314 F DEBUG   :       #08 pc 0000446e  <anonymous:aa652000>
+04-20 21:09:11.607   347   347 I cat     : type=1400 audit(0.0:98): avc: denied { read } for name="type" dev="sysfs" ino=5405 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.607   347   347 I cat     : type=1400 audit(0.0:99): avc: denied { open } for path="/sys/devices/virtual/thermal/thermal_zone0/type" dev="sysfs" ino=5405 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.607   347   347 I cat     : type=1400 audit(0.0:100): avc: denied { write } for path="pipe:[12057]" dev="pipefs" ino=12057 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:11.589   346   346 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstone
+04-20 21:09:11.591   302   302 I /system/bin/tombstoned: received crash request for pid 284
+04-20 21:09:11.591   346   346 I crash_dump32: performing dump of process 284 (target tid = 284)
+04-20 21:09:11.598   346   346 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+04-20 21:09:11.598   346   346 F DEBUG   : LineageOS Version: '17.1-20260420-UNOFFICIAL-mocha'
+04-20 21:09:11.598   346   346 F DEBUG   : Build fingerprint: 'Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys'
+04-20 21:09:11.598   346   346 F DEBUG   : Revision: '0'
+04-20 21:09:11.598   346   346 F DEBUG   : ABI: 'arm'
+04-20 21:09:11.599   346   346 F DEBUG   : Timestamp: 2026-04-20 21:09:11+0000
+04-20 21:09:11.599   346   346 F DEBUG   : pid: 284, tid: 284, name: keystore  >>> /system/bin/keystore <<<
+04-20 21:09:11.599   346   346 F DEBUG   : uid: 1017
+04-20 21:09:11.599   346   346 F DEBUG   : signal 6 (SIGABRT), code -1 (SI_QUEUE), fault addr --------
+04-20 21:09:11.599   346   346 F DEBUG   : Abort message: 'Check failed: device Failed to get service for "android.hardware.keymaster@3.0::IKeymasterDevice" with interface name "default"'
+04-20 21:09:11.599   346   346 F DEBUG   :     r0  00000000  r1  0000011c  r2  00000006  r3  bed28250
+04-20 21:09:11.599   346   346 F DEBUG   :     r4  bed28264  r5  bed28248  r6  0000011c  r7  0000016b
+04-20 21:09:11.599   346   346 F DEBUG   :     r8  bed28260  r9  bed28250  r10 bed28280  r11 bed28270
+04-20 21:09:11.599   346   346 F DEBUG   :     ip  0000011c  sp  bed28220  lr  b5ac3b0b  pc  b5ac3b1e
+04-20 21:09:11.627   295   295 I media.codec: mediacodecservice starting
+04-20 21:09:11.627   228   228 I health@2.0-serv: type=1400 audit(0.0:101): avc: denied { read } for name="present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.627   228   228 I health@2.0-serv: type=1400 audit(0.0:102): avc: denied { open } for path="/sys/devices/platform/tegra12-i2c.1/i2c-1/1-0055/power_supply/battery/present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.627   228   228 I health@2.0-serv: type=1400 audit(0.0:103): avc: denied { getattr } for path="/sys/devices/platform/tegra12-i2c.1/i2c-1/1-0055/power_supply/battery/present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: failed to get path of fd 5: No such file or directory
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: allowing syscall: clock_gettime
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: allowing syscall: connect
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: allowing syscall: fcntl64
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: allowing syscall: socket
+04-20 21:09:11.635   295   295 W media.codec: libminijail[295]: allowing syscall: writev
+04-20 21:09:11.640   295   295 W media.codec: libminijail[295]: logging seccomp filter failures
+04-20 21:09:11.680   356   356 I setprop : type=1400 audit(0.0:104): avc: denied { write } for name="property_service" dev="tmpfs" ino=1281 scontext=u:r:toolbox:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1
+04-20 21:09:11.680   356   356 I setprop : type=1400 audit(0.0:105): avc: denied { connectto } for path="/dev/socket/property_service" scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=unix_stream_socket permissive=1
+04-20 21:09:11.715   314   314 I crash_dump32: type=1400 audit(0.0:106): avc: denied { open } for path="/dev/__properties__/u:object_r:hwservicemanager_prop:s0" dev="tmpfs" ino=1232 scontext=u:r:crash_dump:s0 tcontext=u:object_r:hwservicemanager_prop:s0 tclass=file permissive=1
+04-20 21:09:11.716   314   314 I crash_dump32: type=1400 audit(0.0:107): avc: denied { getattr } for path="/dev/__properties__/u:object_r:hwservicemanager_prop:s0" dev="tmpfs" ino=1232 scontext=u:r:crash_dump:s0 tcontext=u:object_r:hwservicemanager_prop:s0 tclass=file permissive=1
+04-20 21:09:11.724   359   359 I cat     : type=1400 audit(0.0:108): avc: denied { read } for name="type" dev="sysfs" ino=5392 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.724   359   359 I cat     : type=1400 audit(0.0:109): avc: denied { open } for path="/sys/devices/virtual/thermal/cooling_device3/type" dev="sysfs" ino=5392 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.742   298   298 I /apex/com.android.media.swcodec/bin/mediaswcodec: media swcodec service starting
+04-20 21:09:11.744   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: Could not read additional policy file '/vendor/etc/seccomp_policy/mediaswcodec.policy'
+04-20 21:09:11.744   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: failed to get path of fd 5: No such file or directory
+04-20 21:09:11.745   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: allowing syscall: clock_gettime
+04-20 21:09:11.745   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: allowing syscall: connect
+04-20 21:09:11.745   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: allowing syscall: fcntl64
+04-20 21:09:11.745   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: allowing syscall: socket
+04-20 21:09:11.745   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: allowing syscall: writev
+04-20 21:09:11.746   298   298 W /apex/com.android.media.swcodec/bin/mediaswcodec: libminijail[298]: logging seccomp filter failures
+04-20 21:09:11.746   298   298 I CodecServiceRegistrant: Creating software Codec2 service...
+04-20 21:09:11.753   168   168 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.c2@1.0::IComponentStore/default in either framework or device manifest.
+04-20 21:09:11.753   298   298 I CodecServiceRegistrant: Preferred Codec2 store is defaulted to "software".
+04-20 21:09:11.754   298   298 I ServiceManagement: Registered android.hardware.media.c2@1.0::IComponentStore/software (start delay of 652ms)
+04-20 21:09:11.754   298   298 I CodecServiceRegistrant: Software Codec2 service created.
+04-20 21:09:11.764   287   287 V MediaUtils: physMem: 2022432768
+04-20 21:09:11.765   287   287 V MediaUtils: requested limit: 404486540
+04-20 21:09:11.765   287   287 I libc    : malloc_limit: Allocation limit enabled, max size 404486540 bytes
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: failed to get path of fd 5: No such file or directory
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: allowing syscall: clock_gettime
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: allowing syscall: connect
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: allowing syscall: fcntl64
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: allowing syscall: socket
+04-20 21:09:11.770   287   287 W /system/bin/mediaextractor: libminijail[287]: allowing syscall: writev
+04-20 21:09:11.776   287   287 W /system/bin/mediaextractor: libminijail[287]: logging seccomp filter failures
+04-20 21:09:11.808   346   346 F DEBUG   : 
+04-20 21:09:11.808   346   346 F DEBUG   : backtrace:
+04-20 21:09:11.808   346   346 F DEBUG   :       #00 pc 0005eb1e  /apex/com.android.runtime/lib/bionic/libc.so (abort+166) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:11.808   288   288 I mediametrics: ServiceManager: 0xb4c0e5e0
+04-20 21:09:11.809   288   288 D MediaAnalyticsService: MediaAnalyticsService created
+04-20 21:09:11.809   346   346 F DEBUG   :       #01 pc 00007e2b  /system/lib/libbase.so (android::base::DefaultAborter(char const*)+6) (BuildId: be21660791fa5f91abd9dbb320b6a93b)
+04-20 21:09:11.809   346   346 F DEBUG   :       #02 pc 0000859b  /system/lib/libbase.so (android::base::LogMessage::~LogMessage()+418) (BuildId: be21660791fa5f91abd9dbb320b6a93b)
+04-20 21:09:11.810   346   346 F DEBUG   :       #03 pc 00033a59  /system/bin/keystore (_ZZZ25enumerateKeymasterDevicesIN7android8hardware9keymaster4V4_07support10Keymaster3EEN8keystore7DevicesINS0_2spINS4_9KeymasterEEELj3EEEPNS0_4hidl7manager4V1_115IServiceManagerEENKUlRKNS1_8hidl_vecINS1_11hidl_stringEEEE_clESL_ENKUlRKT_bE_clISI_EEDaSP_b+968) (BuildId: 343446c82141abe57ea3eff7b43779a4)
+04-20 21:09:11.812   346   346 F DEBUG   :       #04 pc 00033639  /system/bin/keystore (BuildId: 343446c82141abe57ea3eff7b43779a4)
+04-20 21:09:11.813   346   346 F DEBUG   :       #05 pc 000482cf  /system/lib/libhidlbase.so (android::hidl::manager::V1_0::BpHwServiceManager::_hidl_listByInterface(android::hardware::IInterface*, android::hardware::details::HidlInstrumentor*, android::hardware::hidl_string const&, std::__1::function<void (android::hardware::hidl_vec<android::hardware::hidl_string> const&)>)+546) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:11.813   346   346 F DEBUG   :       #06 pc 000551ad  /system/lib/libhidlbase.so (android::hidl::manager::V1_1::BpHwServiceManager::listByInterface(android::hardware::hidl_string const&, std::__1::function<void (android::hardware::hidl_vec<android::hardware::hidl_string> const&)>)+72) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:11.813   346   346 F DEBUG   :       #07 pc 00031751  /system/bin/keystore (initializeKeymasters()+252) (BuildId: 343446c82141abe57ea3eff7b43779a4)
+04-20 21:09:11.813   346   346 F DEBUG   :       #08 pc 00031bc7  /system/bin/keystore (main+42) (BuildId: 343446c82141abe57ea3eff7b43779a4)
+04-20 21:09:11.814   346   346 F DEBUG   :       #09 pc 0005910f  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+66) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:11.814   346   346 F DEBUG   :       #10 pc 0000f02f  /system/bin/keystore (_start_main+38) (BuildId: 343446c82141abe57ea3eff7b43779a4)
+04-20 21:09:11.814   346   346 F DEBUG   :       #11 pc 0000446e  <anonymous:b62c1000>
+04-20 21:09:11.833   220   220 W zygote  : JNI RegisterNativeMethods: attempt to register 0 native methods for android.media.AudioAttributes
+04-20 21:09:11.857   264   264 I adbd    : <unknown>: already offline
+04-20 21:09:11.894   220   220 D Zygote  : begin preload
+04-20 21:09:11.895   220   220 I Zygote  : Calling ZygoteHooks.beginPreload()
+04-20 21:09:11.912   275   275 I cameraserver: ServiceManager: 0xa78661a0
+04-20 21:09:11.912   275   275 I CameraService: CameraService started (pid=275)
+04-20 21:09:11.912   275   275 I CameraService: CameraService process starting
+04-20 21:09:11.913   275   275 W BatteryNotifier: batterystats service unavailable!
+04-20 21:09:11.915   168   168 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 168 (hwservicemanage), pid 168 (hwservicemanage)
+04-20 21:09:11.913   275   275 W BatteryNotifier: batterystats service unavailable!
+04-20 21:09:11.965   267   267 I mediaserver: ServiceManager: 0xa871e2a0
+04-20 21:09:11.966   267   267 W BatteryNotifier: batterystats service unavailable!
+04-20 21:09:11.966   267   267 W BatteryNotifier: batterystats service unavailable!
+04-20 21:09:11.976   228   228 I health@2.0-serv: type=1400 audit(0.0:110): avc: denied { read } for name="present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.976   228   228 I health@2.0-serv: type=1400 audit(0.0:111): avc: denied { open } for path="/sys/devices/platform/tegra12-i2c.1/i2c-1/1-0055/power_supply/battery/present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.977   228   228 I health@2.0-serv: type=1400 audit(0.0:112): avc: denied { getattr } for path="/sys/devices/platform/tegra12-i2c.1/i2c-1/1-0055/power_supply/battery/present" dev="sysfs" ino=9076 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:11.977   386   386 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstone
+04-20 21:09:11.977   287   287 W MediaExtractorFactory: ignoring extractor 'Matroska Extractor' version 1 in favor of version 1
+04-20 21:09:11.977   302   302 I /system/bin/tombstoned: received crash request for pid 168
+04-20 21:09:11.978   302   302 I /system/bin/tombstoned: enqueueing crash request for pid 168
+04-20 21:09:11.984   287   287 W MediaExtractorFactory: ignoring extractor 'WAV Extractor' version 1 in favor of version 1
+04-20 21:09:11.986   287   287 W MediaExtractorFactory: ignoring extractor 'AAC Extractor' version 1 in favor of version 1
+04-20 21:09:11.988   287   287 W MediaExtractorFactory: ignoring extractor 'AMR Extractor' version 1 in favor of version 1
+04-20 21:09:11.992   314   314 E crash_dump32: unable to connect to activity manager: No such file or directory
+04-20 21:09:11.997   220   220 D Zygote32Timing: BeginPreload took to complete: 103ms
+04-20 21:09:11.997   220   220 I Zygote  : Preloading classes...
+04-20 21:09:12.004   220   220 W Zygote  : Class not found for preloading: android.app.-$$Lambda$ActivityThread$ZXDWm3IBeFmLnFVblhB-IOZCr9o
+04-20 21:09:12.005   287   287 W MediaExtractorFactory: ignoring extractor 'MP4 Extractor' version 2 in favor of version 2
+04-20 21:09:12.008   287   287 W MediaExtractorFactory: ignoring extractor 'FLAC Extractor' version 1 in favor of version 1
+04-20 21:09:12.013   287   287 W MediaExtractorFactory: ignoring extractor 'Ogg Extractor' version 1 in favor of version 1
+04-20 21:09:12.018   287   287 W MediaExtractorFactory: ignoring extractor 'MP3 Extractor' version 1 in favor of version 1
+04-20 21:09:12.047   291   291 I storaged: type=1400 audit(0.0:113): avc: denied { write } for name="tasks" dev="tmpfs" ino=13350 scontext=u:r:storaged:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:12.047   291   291 I storaged: type=1400 audit(0.0:114): avc: denied { open } for path="/dev/stune/foreground/tasks" dev="tmpfs" ino=13350 scontext=u:r:storaged:s0 tcontext=u:object_r:device:s0 tclass=file permissive=1
+04-20 21:09:12.057   346   346 E crash_dump32: unable to connect to activity manager: No such file or directory
+04-20 21:09:12.058   302   302 E /system/bin/tombstoned: Tombstone written to: /data/tombstones/tombstone_00
+04-20 21:09:12.059   386   386 I crash_dump32: performing dump of process 168 (target tid = 168)
+04-20 21:09:12.064   386   386 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+04-20 21:09:12.065   386   386 F DEBUG   : LineageOS Version: '17.1-20260420-UNOFFICIAL-mocha'
+04-20 21:09:12.065   386   386 F DEBUG   : Build fingerprint: 'Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys'
+04-20 21:09:12.065   386   386 F DEBUG   : Revision: '0'
+04-20 21:09:12.065   386   386 F DEBUG   : ABI: 'arm'
+04-20 21:09:12.065   386   386 F DEBUG   : Timestamp: 2026-04-20 21:09:12+0000
+04-20 21:09:12.065   386   386 F DEBUG   : pid: 168, tid: 168, name: hwservicemanage  >>> /system/bin/hwservicemanager <<<
+04-20 21:09:12.065   386   386 F DEBUG   : uid: 1000
+04-20 21:09:12.066   386   386 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0
+04-20 21:09:12.066   386   386 F DEBUG   : Cause: null pointer dereference
+04-20 21:09:12.066   386   386 F DEBUG   :     r0  ad0b3fe8  r1  00000000  r2  bebe210c  r3  bebe20cc
+04-20 21:09:12.066   386   386 F DEBUG   :     r4  bebe2088  r5  ad5dc260  r6  00000000  r7  bebe2070
+04-20 21:09:12.066   386   386 F DEBUG   :     r8  bebe20e0  r9  00000000  r10 ad5dc260  r11 bebe24c8
+04-20 21:09:12.066   386   386 F DEBUG   :     ip  bebe2120  sp  bebe2070  lr  add70e71  pc  ad096c10
+04-20 21:09:12.144   386   386 F DEBUG   : 
+04-20 21:09:12.144   386   386 F DEBUG   : backtrace:
+04-20 21:09:12.145   386   386 F DEBUG   :       #00 pc 00039c10  /system/lib/libvintf.so (android::vintf::HalManifest::getInstances(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, android::vintf::Version const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) const+60) (BuildId: 55fc73031e1a09692729c2d129986df5)
+04-20 21:09:12.145   386   386 F DEBUG   :       #01 pc 0000de6d  /system/bin/hwservicemanager (android::hardware::getInstances(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&)+160) (BuildId: a675a94904f715b12b7417f7047cfa0d)
+04-20 21:09:12.145   386   386 F DEBUG   :       #02 pc 0000a685  /system/bin/hwservicemanager (android::hidl::manager::implementation::ServiceManager::listManifestByInterface(android::hardware::hidl_string const&, std::__1::function<void (android::hardware::hidl_vec<android::hardware::hidl_string> const&)>)+108) (BuildId: a675a94904f715b12b7417f7047cfa0d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #03 pc 0005f3cf  /system/lib/libhidlbase.so (android::hidl::manager::V1_2::BnHwServiceManager::_hidl_listManifestByInterface(android::hidl::base::V1_0::BnHwBase*, android::hardware::Parcel const&, android::hardware::Parcel*, std::__1::function<void (android::hardware::Parcel&)>)+222) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #04 pc 0005fcef  /system/lib/libhidlbase.so (android::hidl::manager::V1_2::BnHwServiceManager::onTransact(unsigned int, android::hardware::Parcel const&, android::hardware::Parcel*, unsigned int, std::__1::function<void (android::hardware::Parcel&)>)+1034) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #05 pc 000689a1  /system/lib/libhidlbase.so (android::hardware::BHwBinder::transact(unsigned int, android::hardware::Parcel const&, android::hardware::Parcel*, unsigned int, std::__1::function<void (android::hardware::Parcel&)>)+52) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #06 pc 0006b3b7  /system/lib/libhidlbase.so (android::hardware::IPCThreadState::getAndExecuteCommand()+2046) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #07 pc 0006c2b1  /system/lib/libhidlbase.so (android::hardware::IPCThreadState::handlePolledCommands()+8) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #08 pc 00007629  /system/bin/hwservicemanager (HwBinderCallback::handleEvent(int, int, void*)+4) (BuildId: a675a94904f715b12b7417f7047cfa0d)
+04-20 21:09:12.146   386   386 F DEBUG   :       #09 pc 000108db  /system/lib/libutils.so (android::Looper::pollInner(int)+654) (BuildId: 088d89fbeccf3d8299d3d4bcc7a0d31a)
+04-20 21:09:12.147   386   386 F DEBUG   :       #10 pc 00010c55  /system/lib/libutils.so (android::Looper::pollAll(int, int*, int*, void**)+232) (BuildId: 088d89fbeccf3d8299d3d4bcc7a0d31a)
+04-20 21:09:12.147   386   386 F DEBUG   :       #11 pc 00007363  /system/bin/hwservicemanager (main+798) (BuildId: a675a94904f715b12b7417f7047cfa0d)
+04-20 21:09:12.147   386   386 F DEBUG   :       #12 pc 0005910f  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+66) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:12.147   386   386 F DEBUG   :       #13 pc 0000702f  /system/bin/hwservicemanager (_start_main+38) (BuildId: a675a94904f715b12b7417f7047cfa0d)
+04-20 21:09:12.147   386   386 F DEBUG   :       #14 pc 0000446e  <anonymous:add5a000>
+04-20 21:09:12.172   386   386 I crash_dump32: type=1400 audit(0.0:115): avc: denied { getattr } for path="/dev/event-log-tags" dev="tmpfs" ino=6777 scontext=u:r:crash_dump:s0 tcontext=u:object_r:runtime_event_log_tags_file:s0 tclass=file permissive=1
+04-20 21:09:12.173   386   386 I crash_dump32: type=1400 audit(0.0:117): avc: denied { open } for path="/sys/fs/selinux/status" dev="selinuxfs" ino=19 scontext=u:r:crash_dump:s0 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=1
+04-20 21:09:12.188   297   297 F DEBUG   : 
+04-20 21:09:12.188   297   297 F DEBUG   : backtrace:
+04-20 21:09:12.188   297   297 F DEBUG   :       #00 pc 00013bea  /system/lib/libaudioflinger.so (android::AudioFlinger::AudioFlinger()+1250) (BuildId: 82db5b7b80b736e33bdb50234959cf75)
+04-20 21:09:12.188   297   297 F DEBUG   :       #01 pc 000024e3  /system/bin/audioserver (android::BinderService<android::AudioFlinger>::publish(bool, int)+54) (BuildId: 7ab9dc84193abc6c8d2a5b2c48066366)
+04-20 21:09:12.188   297   297 F DEBUG   :       #02 pc 00002231  /system/bin/audioserver (main+492) (BuildId: 7ab9dc84193abc6c8d2a5b2c48066366)
+04-20 21:09:12.188   297   297 F DEBUG   :       #03 pc 0005910f  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+66) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:12.188   297   297 F DEBUG   :       #04 pc 0000202f  /system/bin/audioserver (_start_main+38) (BuildId: 7ab9dc84193abc6c8d2a5b2c48066366)
+04-20 21:09:12.188   297   297 F DEBUG   :       #05 pc 0000446e  <anonymous:ad7a3000>
+04-20 21:09:12.200   386   386 E crash_dump32: unable to connect to activity manager: No such file or directory
+04-20 21:09:12.206   302   302 E /system/bin/tombstoned: Tombstone written to: /data/tombstones/tombstone_01
+04-20 21:09:12.211   275   275 F HidlStatus: Status.cpp:163] Failed HIDL return status not checked: Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '
+04-20 21:09:12.211   275   275 F libc    : Fatal signal 6 (SIGABRT), code -1 (SI_QUEUE) in tid 275 (cameraserver), pid 275 (cameraserver)
+04-20 21:09:12.212   227   227 I SoftGatekeeper: called close_device with gate keeper 0x0 device 0xb4fa7000
+04-20 21:09:12.213   219   345 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xa68afd80 in tid 345 (HwBinder:219_1), pid 219 (Binder:219_3)
+04-20 21:09:12.219   291   393 E ServiceManagement: getService: defaultServiceManager()->getTransport returns Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '
+04-20 21:09:12.217   219   219 I HwBinder:219_1: type=1400 audit(0.0:118): avc: denied { sys_resource } for capability=24 scontext=u:r:netd:s0 tcontext=u:r:netd:s0 tclass=capability permissive=1
+04-20 21:09:12.239   291   291 I storaged: type=1400 audit(0.0:119): avc: denied { read } for name="stat" dev="sysfs" ino=11689 scontext=u:r:storaged:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:12.240   291   393 I HealthHalUtils: health: cannot get default service
+04-20 21:09:12.240   291   393 E ServiceManagement: getService: defaultServiceManager()->getTransport returns Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '
+04-20 21:09:12.240   291   393 I HealthHalUtils: health: cannot get backup service
+04-20 21:09:12.240   291   393 W storaged: health: failed to find IHealth service
+04-20 21:09:12.248   291   291 I storaged: type=1400 audit(0.0:120): avc: denied { open } for path="/sys/devices/platform/sdhci-tegra.3/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat" dev="sysfs" ino=11689 scontext=u:r:storaged:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:12.249   291   291 I storaged: type=1400 audit(0.0:121): avc: denied { getattr } for path="/sys/devices/platform/sdhci-tegra.3/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat" dev="sysfs" ino=11689 scontext=u:r:storaged:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:12.249   414   414 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstone
+04-20 21:09:12.249   291   393 I storaged: storaged: Start
+04-20 21:09:12.250   302   302 I /system/bin/tombstoned: received crash request for pid 345
+04-20 21:09:12.250   414   414 I crash_dump32: performing dump of process 219 (target tid = 345)
+04-20 21:09:12.252   291   393 I ServiceManager: Waiting for service 'package_native' on '/dev/binder'...
+04-20 21:09:12.253   413   413 I cat     : type=1400 audit(0.0:122): avc: denied { write } for path="pipe:[12226]" dev="pipefs" ino=12226 scontext=u:r:toolbox:s0 tcontext=u:r:init:s0 tclass=fifo_file permissive=1
+04-20 21:09:12.254   414   414 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+04-20 21:09:12.254   414   414 F DEBUG   : LineageOS Version: '17.1-20260420-UNOFFICIAL-mocha'
+04-20 21:09:12.254   414   414 F DEBUG   : Build fingerprint: 'Xiaomi/lineage_mocha/mocha:10/QQ3A.200805.001/eng.dargon.20260420.193207:eng/test-keys'
+04-20 21:09:12.254   414   414 F DEBUG   : Revision: '0'
+04-20 21:09:12.254   414   414 F DEBUG   : ABI: 'arm'
+04-20 21:09:12.254   414   414 F DEBUG   : Timestamp: 2026-04-20 21:09:12+0000
+04-20 21:09:12.254   414   414 F DEBUG   : pid: 219, tid: 345, name: HwBinder:219_1  >>> /system/bin/netd <<<
+04-20 21:09:12.255   414   414 F DEBUG   : uid: 0
+04-20 21:09:12.255   414   414 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xa68afd80
+04-20 21:09:12.255   414   414 F DEBUG   :     r0  00000000  r1  aabf2840  r2  000000b8  r3  00000000
+04-20 21:09:12.255   414   414 F DEBUG   :     r4  aa307d08  r5  bec00000  r6  bef2f550  r7  aa307d2c
+04-20 21:09:12.255   414   414 F DEBUG   :     r8  00000000  r9  aa307d84  r10 0000000b  r11 bef2f54c
+04-20 21:09:12.255   414   414 F DEBUG   :     ip  aac85d14  sp  a94550f8  lr  aabffd85  pc  aabff6d8
+04-20 21:09:12.270   414   414 F DEBUG   : 
+04-20 21:09:12.270   414   414 F DEBUG   : backtrace:
+04-20 21:09:12.270   414   414 F DEBUG   :       #00 pc 0002f6d8  /apex/com.android.runtime/lib/bionic/libc.so (je_free+952) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:12.271   414   414 F DEBUG   :       #01 pc 0000af11  /system/lib/libutils.so (android::RefBase::decStrong(void const*) const+68) (BuildId: 088d89fbeccf3d8299d3d4bcc7a0d31a)
+04-20 21:09:12.271   414   414 F DEBUG   :       #02 pc 00064aab  /system/lib/libhidlbase.so (android::hidl::base::V1_0::BnHwBase::~BnHwBase()+126) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.271   414   414 F DEBUG   :       #03 pc 0000b0d5  /system/lib/android.system.net.netd@1.1.so (android::system::net::netd::V1_1::BnHwNetd::~BnHwNetd()+124) (BuildId: 7d82a3de77e53ec28b192437f882efa1)
+04-20 21:09:12.271   414   414 F DEBUG   :       #04 pc 0000b273  /system/lib/android.system.net.netd@1.1.so (_ZTv0_n12_N7android6system3net4netd4V1_18BnHwNetdD0Ev+18) (BuildId: 7d82a3de77e53ec28b192437f882efa1)
+04-20 21:09:12.271   414   414 F DEBUG   :       #05 pc 0000af11  /system/lib/libutils.so (android::RefBase::decStrong(void const*) const+68) (BuildId: 088d89fbeccf3d8299d3d4bcc7a0d31a)
+04-20 21:09:12.271   414   414 F DEBUG   :       #06 pc 0006c1e9  /system/lib/libhidlbase.so (android::hardware::IPCThreadState::joinThreadPool(bool)+368) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.271   414   414 F DEBUG   :       #07 pc 00076d59  /system/lib/libhidlbase.so (android::hardware::PoolThread::threadLoop()+12) (BuildId: e403135aa7911c6137c31d548a54ee3d)
+04-20 21:09:12.271   414   414 F DEBUG   :       #08 pc 0000d8b7  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+186) (BuildId: 088d89fbeccf3d8299d3d4bcc7a0d31a)
+04-20 21:09:12.271   414   414 F DEBUG   :       #09 pc 000a7507  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+20) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:12.272   414   414 F DEBUG   :       #10 pc 00060017  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: bb7b7cc4ca53b52dbcdfe308da60e6d6)
+04-20 21:09:12.278   167   167 I ServiceManager: service 'media.player' died
+04-20 21:09:12.278   167   167 I ServiceManager: service 'media.resource_manager' died
+04-20 21:09:12.288   302   302 W /system/bin/tombstoned: crash socket received short read of length 0 (expected 12)
+04-20 21:09:12.289   167   167 I ServiceManager: service 'dnsresolver' died
+04-20 21:09:12.289   167   167 I ServiceManager: service 'netd' died
+04-20 21:09:12.298   167   167 I ServiceManager: service 'wificond' died
+04-20 21:09:12.342     1     1 I init    : type=1400 audit(0.0:123): avc: denied { getattr } for path="/system/bin/dnsmasq" dev="mmcblk0p26" ino=480 scontext=u:r:init:s0 tcontext=u:object_r:dnsmasq_exec:s0 tclass=file permissive=1
+04-20 21:09:12.343   423   423 I cat     : type=1400 audit(0.0:124): avc: denied { read } for name="type" dev="sysfs" ino=5220 scontext=u:r:toolbox:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:12.345   295   295 I android.hardwar: type=1400 audit(0.0:126): avc: denied { read write } for name="nvhost-ctrl" dev="tmpfs" ino=1459 scontext=u:r:mediacodec:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:12.345   295   295 I android.hardwar: type=1400 audit(0.0:127): avc: denied { open } for path="/dev/nvhost-ctrl" dev="tmpfs" ino=1459 scontext=u:r:mediacodec:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 21:09:12.346   295   295 I android.hardwar: type=1400 audit(0.0:129): avc: denied { read } for name="tegra_chip_id" dev="sysfs" ino=1769 scontext=u:r:mediacodec:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+04-20 21:09:12.353   291   393 I ServiceManager: Waiting for service 'package_native' on '/dev/binder'...

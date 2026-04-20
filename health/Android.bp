@@ -36,6 +36,7 @@ cc_binary {
 
     overrides: [
         "healthd",
+        "android.hardware.health@2.0-service",
     ],
 }
 
@@ -77,5 +78,6 @@ cc_binary {
 
     overrides: [
 	"healthd",
+	"android.hardware.health@2.0-service",
     ],
 }

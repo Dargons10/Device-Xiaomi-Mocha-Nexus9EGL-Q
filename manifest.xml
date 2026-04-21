@@ -7,9 +7,6 @@
             <name>IDevicesFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IDevicesFactory/default</fqname>
-        <fqname>@4.0::IDevicesFactory/default</fqname>
-        <fqname>@2.0::IDevicesFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
@@ -19,9 +16,15 @@
             <name>IEffectsFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IEffectsFactory/default</fqname>
-        <fqname>@4.0::IEffectsFactory/default</fqname>
-        <fqname>@2.0::IEffectsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.thermal</name>
+        <transport arch="32">passthrough</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IThermal</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>

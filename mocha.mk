@@ -160,6 +160,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service.tegra
 
+# Remove conflicting generic HAL services
+PRODUCT_PACKAGES_REMOVE += \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.health@2.0-service
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \

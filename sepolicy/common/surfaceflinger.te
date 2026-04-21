@@ -72,3 +72,8 @@ allow surfaceflinger sysfs_gpu:file r_file_perms;
 
 # Allow access to GPU devices
 allow surfaceflinger gpu_device:chr_file rw_file_perms;
+
+# Allow access to nvhost and nvmap devices (required for passthrough HWC)
+# Since they are currently labeled as generic 'device', we grant this temporarily
+# until proper labeling is confirmed.
+allow surfaceflinger device:chr_file rw_file_perms;

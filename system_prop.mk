@@ -17,7 +17,7 @@
 
 # Low RAM configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=false \
+    ro.config.low_ram=true \
     persist.traced.enable=1
 
 # LMK settings (less aggressive for 2GB RAM)

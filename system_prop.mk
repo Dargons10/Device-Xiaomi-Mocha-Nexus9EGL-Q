@@ -31,12 +31,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik/ART heap tuning
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapstartsize=16m \
     dalvik.vm.heapgrowthlimit=192m \
     dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapmaxfree=16m
+    dalvik.vm.heaptargetutilization=0.755 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
 
 # Compiler and optimization settings
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile

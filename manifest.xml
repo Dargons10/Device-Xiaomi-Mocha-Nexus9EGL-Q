@@ -27,15 +27,7 @@
         <fqname>@4.0::IEffectsFactory/default</fqname>
         <fqname>@2.0::IEffectsFactory/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>android.hardware.thermal</name>
-        <transport arch="32">passthrough</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IThermal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
+
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport arch="32">passthrough</transport>

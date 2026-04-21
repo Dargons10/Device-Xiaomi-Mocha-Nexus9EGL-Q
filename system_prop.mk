@@ -17,7 +17,7 @@
 
 # Low RAM configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=true \
+    ro.config.low_ram=false \
     persist.traced.enable=1
 
 # LMK settings (less aggressive for 2GB RAM)
@@ -31,12 +31,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik/ART heap tuning
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapstartsize=16m \
     dalvik.vm.heapgrowthlimit=192m \
     dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.7 \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapmaxfree=16m
+    dalvik.vm.heaptargetutilization=0.755 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
 
 # Compiler and optimization settings
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
@@ -72,10 +72,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # AptX
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.enableAptXHD=true \
-    persist.service.btui.use_aptx=1 \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldacs
+    persist.bluetooth.a2dp_offload.disabled=true \
+    persist.bluetooth.bluetooth_audio_hal.disabled=true \
+    ro.bluetooth.a2dp_offload.supported=false \
+    persist.vendor.bt.a2dp_offload_cap=none \
+    persist.vendor.btstack.a2dp_offload_cap=none
 
 # BT
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,4 +164,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     ap.interface=wlan0 \
     persist.tegra.nvmmlite=1 \
-    persist.wlan.ti.calibrated=0
+    persist.wlan.ti.calibrated=0 \
+    ro.ril.wake_lock_timeout=200 \
+    wifi.supplicant_scan_interval=180
+ro.ril.wake_lock_timeout=200
+wifi.supplicant_scan_interval=180

@@ -116,12 +116,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.input.noresample=1 \
     ro.zygote.disable_gl_preload=true \
     persist.vendor.tegra.composite.policy=composite-yuv \
-    debug.hwc.force_gpu=1 \
-    persist.sys.ui.hw=false \
+    debug.hwc.force_gpu=0 \
+    persist.sys.ui.hw=true \
     debug.hwui.use_buffer_age=false \
     debug.hwui.renderer=opengl \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=2 \
-    debug.sf.disable_hwc=1
+    debug.sf.disable_hwc=0
 
 # Lineage genuine
 PRODUCT_PROPERTY_OVERRIDES += \

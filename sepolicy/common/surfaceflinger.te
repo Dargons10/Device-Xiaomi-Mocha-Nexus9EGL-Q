@@ -20,6 +20,8 @@ allow surfaceflinger self:process execmem;
 # Allow surfaceflinger to configure smartdimmer and other PMQoS nodes
 allow surfaceflinger sysfs_thermal:file rw_file_perms;
 allow surfaceflinger sysfs_smartdimmer:file rw_file_perms;
+allow surfaceflinger sysfs:file rw_file_perms;
+
 
 # Allow surfaceflinger to access tsec
 allow surfaceflinger tsec_device:chr_file rw_file_perms;
@@ -76,4 +78,5 @@ allow surfaceflinger gpu_device:chr_file rw_file_perms;
 # Allow access to nvhost and nvmap devices (required for passthrough HWC)
 # Since they are currently labeled as generic 'device', we grant this temporarily
 # until proper labeling is confirmed.
-allow surfaceflinger device:chr_file rw_file_perms;
+allow surfaceflinger device:chr_file { getattr read write open ioctl };
+

@@ -22,3 +22,14 @@ allow ussrd tegradc_device:chr_file rw_file_perms;
 
 # Allow ussrd to access system background tasks
 allow ussrd cgroup:file rw_file_perms;
+
+# Allow ussrd to execute shell scripts (ussr_setup.sh)
+allow ussrd shell_exec:file rx_file_perms;
+allow ussrd toolbox_exec:file rx_file_perms;
+allow ussrd vendor_shell_exec:file rx_file_perms;
+
+# Allow ussrd to set properties
+set_prop(ussrd, system_prop)
+set_prop(ussrd, exported_system_prop)
+allow ussrd property_socket:sock_file write;
+allow ussrd init:unix_stream_socket connectto;

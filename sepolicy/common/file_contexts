@@ -75,6 +75,7 @@
 # /dev/tegra_dc devices
 /dev/tegra_dc_.*			u:object_r:tegradc_device:s0
 /dev/tegra-throughput		u:object_r:throughput_device:s0
+/dev/watchdog			u:object_r:watchdog_device:s0
 # rpmb block device
 /dev/block/platform/sdhci-tegra\.3/mmcblk0rpmb		u:object_r:rpmb_block_device:s0
 # setup_fs emmc
@@ -151,6 +152,7 @@
 /charger    u:object_r:charger_exec:s0
 /system/bin/charger    u:object_r:charger_exec:s0
 /system/bin/charger_led.sh    u:object_r:charger_exec:s0
+/system/bin/watchdogd         u:object_r:watchdogd_exec:s0
 
 # TEE
 (/system)?/vendor/bin/tlk_daemon	u:object_r:tee_exec:s0

@@ -59,3 +59,6 @@ type cy8c_device, dev_type;
 
 # /dev/tegra-throughput
 type throughput_device, dev_type;
+
+# /dev/watchdog
+type watchdog_device, dev_type;

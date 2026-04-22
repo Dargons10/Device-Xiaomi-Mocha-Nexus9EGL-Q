@@ -1,2 +1,8 @@
+type hal_memtrack_default, domain;
+hal_server_domain(hal_memtrack_default, hal_memtrack)
+
+type hal_memtrack_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_memtrack_default)
+
 # allow memtrack HAL to access nvmap stats
 allow hal_memtrack_default debugfs_nvmap:file  r_file_perms;

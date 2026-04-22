@@ -12,20 +12,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-##########################
-# Devices
-
-# GPU
-/dev/nvhost-as-gpu			u:object_r:gpu_device:s0
-/dev/nvhost-ctrl			u:object_r:gpu_device:s0
-/dev/nvhost-ctrl-gpu			u:object_r:gpu_device:s0
-/dev/nvhost-gpu				u:object_r:gpu_device:s0
-/dev/nvhost-dbg-gpu			u:object_r:gpu_device:s0
-/dev/nvhost-tsg-gpu			u:object_r:gpu_device:s0
-/dev/nvhost-prof-gpu			u:object_r:gpu_device:s0
-/dev/nvhost-vic				u:object_r:gpu_device:s0
+#############################
+# Graphics
+/dev/tegra_dc.*				u:object_r:tegradc_device:s0
 /dev/nvmap				u:object_r:gpu_device:s0
-/dev/nvhdcp[0-9]*			u:object_r:gpu_device:s0
+/dev/nvhost-as-gpu			u:object_r:gpu_device:s0
+/dev/nvhost-gpu				u:object_r:gpu_device:s0
+/dev/nvhost-ctrl-gpu			u:object_r:gpu_device:s0
+/dev/nvhost-vic				u:object_r:gpu_device:s0
+/dev/nvhost-msenc			u:object_r:gpu_device:s0
+/dev/nvhost-tsec			u:object_r:gpu_device:s0
+/dev/nvhost-ctrl			u:object_r:gpu_device:s0
+/dev/nvhost-ctrl-vi			u:object_r:gpu_device:s0
+/dev/nvhost-ctrl-isp			u:object_r:gpu_device:s0
+/dev/nvhost-vi				u:object_r:gpu_device:s0
+/dev/nvhost-isp				u:object_r:gpu_device:s0
+/dev/nvhost-vi\.1			u:object_r:gpu_device:s0
+/dev/nvhost-isp\.1			u:object_r:gpu_device:s0
+/dev/nvhost-ctrl-vi\.1			u:object_r:gpu_device:s0
+/dev/nvhost-ctrl-isp\.1			u:object_r:gpu_device:s0
+/dev/nvhost-dbg-gpu			u:object_r:gpu_device:s0
+/dev/nvhost-prof-gpu			u:object_r:gpu_device:s0
+/dev/throughput				u:object_r:throughput_device:s0
+
+/dev/knvrm				u:object_r:gpu_device:s0
+/dev/nvhdcp0				u:object_r:gpu_device:s0
+/dev/nvhdcp1				u:object_r:gpu_device:s0
+
 /dev/tegra-throughput		u:object_r:throughput_device:s0
 /dev/cpuset(/.*)?			u:object_r:cgroup:s0
 /dev/stune(/.*)?			u:object_r:cgroup:s0
@@ -193,7 +206,7 @@
 # update_js_touch_fw
 /system/bin/update_js_touch_fw.sh	u:object_r:update_js_touch_fw_exec:s0
 # phs
-/(vendor|system/vendor)/bin/ussrd		u:object_r:ussrd_exec:s0
+/system/vendor/bin/ussrd		u:object_r:ussrd_exec:s0
 /system/bin/ussr_setup\.sh		u:object_r:ussr_setup_exec:s0
 # dual wifi
 /system/bin/wpa_supplicant_2		u:object_r:hal_wifi_supplicant_default_exec:s0
@@ -232,19 +245,19 @@
 /system/vendor/bin/hw/vendor\.lineage\.trust@1\.0-service                    u:object_r:hal_trust_default_exec:s0
 
 # HIDL HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
+/system/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
+/system/vendor/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
 
 #############################
 # Data files
@@ -321,8 +334,7 @@
 /sys/class/leds/green/trigger      u:object_r:sysfs_led:s0
 /sys/class/leds/blue/trigger       u:object_r:sysfs_led:s0
 # LED sysfs
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight(/.*)?  u:object_r:sysfs_backlight:s0
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/brightness  u:object_r:sysfs_backlight:s0
+/sys/devices/platform/tegra12-i2c\.0/i2c-0/0-002c/backlight/lcd-backlight/brightness  u:object_r:sysfs_backlight:s0
 /sys/vibrator/pwmvalue             u:object_r:sysfs_vibrator:s0
 # USB sysfs
 /sys/devices/platform/tegra-xhci(/.*)?			u:object_r:sysfs_bus_usb:s0

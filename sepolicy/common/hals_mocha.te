@@ -1,0 +1,35 @@
+# Bluetooth HAL
+type hal_bluetooth_default, domain;
+hal_server_domain(hal_bluetooth_default, hal_bluetooth)
+type hal_bluetooth_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_bluetooth_default)
+
+# Gatekeeper HAL
+type hal_gatekeeper_default, domain;
+hal_server_domain(hal_gatekeeper_default, hal_gatekeeper)
+type hal_gatekeeper_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_gatekeeper_default)
+
+# Keymaster HAL
+type hal_keymaster_default, domain;
+hal_server_domain(hal_keymaster_default, hal_keymaster)
+type hal_keymaster_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_keymaster_default)
+
+# OMX HAL
+type hal_omx_default, domain;
+hal_server_domain(hal_omx_default, hal_omx)
+type hal_omx_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_omx_default)
+
+# Graphics Composer HAL
+type hal_graphics_composer_default, domain;
+hal_server_domain(hal_graphics_composer_default, hal_graphics_composer)
+type hal_graphics_composer_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_graphics_composer_default)
+
+# Graphics Allocator HAL
+type hal_graphics_allocator_default, domain;
+hal_server_domain(hal_graphics_allocator_default, hal_graphics_allocator)
+type hal_graphics_allocator_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_graphics_allocator_default)

@@ -1,0 +1,13 @@
+type hal_power_default, domain;
+hal_server_domain(hal_power_default, hal_power)
+
+type hal_power_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_power_default)
+
+# Allow access to power nodes
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+allow hal_power_default pmqos_device:chr_file rw_file_perms;
+allow hal_power_default sysfs:file rw_file_perms;
+
+# Power HAL needs to talk to the kernel for scheduler hints
+allow hal_power_default kernel:process setsched;

@@ -54,6 +54,8 @@ on post-fs-data
     mkdir /data/system/recent_tasks 0770 system system
     mkdir /data/system/recent_images 0770 system system
     restorecon_recursive /data/system/devices/keylayout
+    restorecon_recursive /data/system/recent_tasks
+    restorecon_recursive /data/system/recent_images
 
 on boot
     #max resolution supported for Miracast is 1080p, represented interms of macroblocks

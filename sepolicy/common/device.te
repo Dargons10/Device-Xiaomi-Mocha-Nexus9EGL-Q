@@ -56,3 +56,6 @@ type rpx_block_device, dev_type;
 
 # /dev/cy8c-led-boot
 type cy8c_device, dev_type;
+
+# /dev/tegra-throughput
+type throughput_device, dev_type;

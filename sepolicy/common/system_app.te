@@ -191,3 +191,6 @@ allow system_app vold:binder call;
 
 # SELinux
 allow system_app { apex_service system_suspend_control_service }:service_manager find;
+
+# Tegra Throughput
+allow system_app throughput_device:chr_file rw_file_perms;

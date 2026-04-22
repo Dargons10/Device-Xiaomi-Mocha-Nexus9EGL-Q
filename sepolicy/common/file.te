@@ -118,6 +118,9 @@ type sysfs_led, fs_type, sysfs_type;
 # /sys/class/backlight/lcd-backlight
 type sysfs_backlight, fs_type, sysfs_type;
 
+# /sys/vibrator
+type sysfs_vibrator, fs_type, sysfs_type;
+
 # Graphics
 type sysfs_graphics, fs_type, sysfs_type;
 

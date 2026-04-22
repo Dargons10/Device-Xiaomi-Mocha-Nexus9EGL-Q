@@ -167,6 +167,15 @@ on boot
     chown system system /sys/devices/platform/host1x/tegradc.0/nvdps
     chown system system /sys/class/graphics/fb0/device/nvdps
 
+    # Restore contexts for GPU and throughput
+    restorecon /dev/nvmap
+    restorecon /dev/nvhost-ctrl
+    restorecon /dev/nvhost-ctrl-gpu
+    restorecon /dev/nvhost-as-gpu
+    restorecon /dev/nvhost-gpu
+    restorecon /dev/nvhost-vic
+    restorecon /dev/tegra-throughput
+
 #ozwpan driver: WiFi direct USB shim driver
     chown system system /dev/ozwpan
     chown system system /sys/class/ozmo_wpan/ozwpan/devices
@@ -176,7 +185,9 @@ on boot
 
 # LP5521
     chown system system /sys/bus/i2c/drivers/lp5521/0-0032/select_engine
+    chmod 0660 /sys/bus/i2c/drivers/lp5521/0-0032/select_engine
     chown system system /sys/bus/i2c/drivers/lp5521/0-0032/run_engine
+    chmod 0660 /sys/bus/i2c/drivers/lp5521/0-0032/run_engine
 
 # TLK storage service
 import /vendor/etc/init/hw/init.tlk.rc

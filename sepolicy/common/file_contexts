@@ -74,6 +74,7 @@
 /dev/socket/wpa_xlan[0-9]		u:object_r:wpa_socket:s0
 # /dev/tegra_dc devices
 /dev/tegra_dc_.*			u:object_r:tegradc_device:s0
+/dev/tegra-throughput		u:object_r:throughput_device:s0
 # rpmb block device
 /dev/block/platform/sdhci-tegra\.3/mmcblk0rpmb		u:object_r:rpmb_block_device:s0
 # setup_fs emmc
@@ -113,6 +114,7 @@
 /dev/block/platform/sdhci-tegra(.*)/by-name/DTB-B		u:object_r:bootloader_block_device:s0
 /dev/block/platform/sdhci-tegra(.*)/by-name/RP1-A		u:object_r:bootloader_block_device:s0
 /dev/block/platform/sdhci-tegra(.*)/by-name/RP1-B		u:object_r:bootloader_block_device:s0
+/dev/block/mmcblk0p29					u:object_r:userdata_block_device:s0
 /dev/block/mmcblk0boot0					u:object_r:bootloader_block_device:s0
 # fscheck emmc
 /dev/block/platform/sdhci-tegra(.*)/by-name/RP4         u:object_r:fscheck_block_device:s0
@@ -225,8 +227,10 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service        u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
@@ -308,6 +312,7 @@
 # LED sysfs
 /sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight(/.*)?  u:object_r:sysfs_backlight:s0
 /sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/brightness  u:object_r:sysfs_backlight:s0
+/sys/vibrator/pwmvalue             u:object_r:sysfs_vibrator:s0
 # USB sysfs
 /sys/devices/platform/tegra-xhci(/.*)?			u:object_r:sysfs_bus_usb:s0
 # SATA sysfs
@@ -324,6 +329,7 @@
 /sys/devices/platform/psy_extcon.*/power_supply/usb/online		u:object_r:sysfs_power_supply:s0
 /sys/devices/platform/psy_extcon.*/power_supply/ac/online		u:object_r:sysfs_power_supply:s0
 /sys/devices/platform/tegra-i2c.0/i2c-0/0-0036/power_supply/battery(/.*)? u:object_r:sysfs_power_supply:s0
+/sys/devices/.*\.i2c/i2c-.*/.*/power_supply/battery(/.*)? u:object_r:sysfs_power_supply:s0
 
 # pwm-fan sysfs nodes
 /sys/devices/platform/pwm-fan(.*)/pwm_cap   		u:object_r:sysfs_pwm_fan:s0

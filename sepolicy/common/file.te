@@ -58,10 +58,10 @@ type coredump_data_file, file_type, data_file_type, core_data_file_type;
 type phsd_data, file_type, data_file_type, core_data_file_type;
 
 # /dev/socket/phsd
-type phsd_socket, file_type;
+type phsd_socket, socket_type;
 
 # /dev/socket/charon..
-type charon_socket, file_type;
+type charon_socket, socket_type;
 
 # /sys/devices/platform/host1x/tegradc.0/smartdimmer/...
 type sysfs_smartdimmer, fs_type, sysfs_type;

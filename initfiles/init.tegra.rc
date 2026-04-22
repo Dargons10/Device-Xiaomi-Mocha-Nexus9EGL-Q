@@ -104,6 +104,9 @@ on boot
     restorecon /dev/nvhost-gpu
     restorecon /dev/nvhost-vic
     restorecon /dev/tegra-throughput
+    restorecon /dev/tegra_dc_ctrl
+    restorecon /dev/tegra_dc_0
+    restorecon /dev/tegra_dc_1
    
 # charger
     chown system system /sys/devices/platform/tegra12-i2c.0/i2c-1/1-006b/disabled_by_user

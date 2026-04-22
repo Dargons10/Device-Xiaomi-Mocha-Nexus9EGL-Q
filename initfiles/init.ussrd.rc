@@ -52,4 +52,6 @@ service ussrd /vendor/bin/ussrd
     class main
     socket phsd stream 0666 system system
     writepid /dev/cpuset/system-background/tasks
+    onrestart restart ussr_setup
+    onrestart restorecon /dev/socket/phsd
 

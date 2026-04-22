@@ -27,4 +27,7 @@ allow netd sysfs_wifi:file w_file_perms;
 
 allow netd kernel:system module_request;
 
+# Allow netd to execute toolbox/toybox
+allow netd toolbox_exec:file rx_file_perms;
+
 dontaudit netd self:capability { sys_module fsetid };

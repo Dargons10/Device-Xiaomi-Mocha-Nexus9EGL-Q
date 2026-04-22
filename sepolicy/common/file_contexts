@@ -263,6 +263,8 @@
 /data/stats_share(/.*)?                 u:object_r:stats_share_file:s0
 # Keyboard layout files
 /data/system/devices/keylayout(/.*)?		u:object_r:keylayout_data_file:s0
+/data/system/recent_tasks(/.*)?			u:object_r:system_data_file:s0
+/data/system/recent_images(/.*)?		u:object_r:system_data_file:s0
 # dx_provTest data folder
 /data/provTest(/.*)?			u:object_r:dx_data_file:s0
 

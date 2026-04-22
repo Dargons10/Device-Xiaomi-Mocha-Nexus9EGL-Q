@@ -34,3 +34,11 @@ allow priv_app asec_apk_file:file r_file_perms;
 # Allow getattr access permission to app specific directories
 allow priv_app system_app_data_file:dir getattr;
 allow priv_app fac_file:filesystem getattr;
+
+# PHSD access for performance scaling
+allow priv_app phsd_socket:sock_file write;
+allow priv_app phsd:unix_stream_socket connectto;
+
+# GPU access
+allow priv_app gpu_device:chr_file rw_file_perms;
+allow priv_app gpu_device:chr_file ioctl;

@@ -1,4 +1,8 @@
+type hal_health_default, domain;
+type hal_health_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_health_default)
+
+hal_server_domain(hal_health_default, hal_health)
 
 # Read access to pseudo filesystems.
 r_dir_file(hal_health_default, sysfs_power_supply)
@@ -7,4 +11,11 @@ allow hal_health_default sysfs_batteryinfo:file w_file_perms;
 
 # For monitoring battery uevents
 allow hal_health_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Allow health HAL to talk to system_server and storaged
+binder_call(hal_health_default, system_server)
+binder_call(hal_health_default, storaged)
+
+# Allow reading sysfs files found in logs
+allow hal_health_default sysfs:file r_file_perms;
 

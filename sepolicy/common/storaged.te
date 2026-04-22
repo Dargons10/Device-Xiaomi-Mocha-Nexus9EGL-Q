@@ -1,1 +1,2 @@
- allow storaged package_native_service:service_manager find;
+allow storaged package_native_service:service_manager find;
+hal_client_domain(storaged, hal_health)

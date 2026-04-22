@@ -127,3 +127,15 @@ allow system_server keylayout_data_file:dir search;
 
 # allow system_server to control gpu power knobs
 allow system_server sysfs_gpu_power_knobs:file rw_file_perms;
+
+# GPU and Graphics access
+allow system_server gpu_device:chr_file rw_file_perms;
+allow system_server gpu_device:chr_file ioctl;
+allow system_server throughput_device:chr_file rw_file_perms;
+
+# Execmem for RenderThread/Gralloc
+allow system_server self:process execmem;
+
+# Allow system_server to talk to health HAL
+hal_client_domain(system_server, hal_health)
+

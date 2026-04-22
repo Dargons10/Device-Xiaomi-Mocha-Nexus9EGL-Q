@@ -97,6 +97,13 @@ on post-fs-data
 import /vendor/etc/init/hw/init.hdcp.rc
 
 on boot
+    restorecon /dev/nvmap
+    restorecon /dev/nvhost-as-gpu
+    restorecon /dev/nvhost-ctrl
+    restorecon /dev/nvhost-ctrl-gpu
+    restorecon /dev/nvhost-gpu
+    restorecon /dev/nvhost-vic
+    restorecon /dev/tegra-throughput
    
 # charger
     chown system system /sys/devices/platform/tegra12-i2c.0/i2c-1/1-006b/disabled_by_user

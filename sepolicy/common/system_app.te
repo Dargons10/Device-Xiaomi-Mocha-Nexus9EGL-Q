@@ -50,6 +50,7 @@ allow system_app sysfs_pepper_timeout:file rw_file_perms;
 
 # /dev/tegra_dc_*
 allow system_app tegradc_device:chr_file rw_file_perms;
+allow system_app gpu_device:chr_file rw_file_perms;
 
 allow system_app device:dir r_dir_perms;
 

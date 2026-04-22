@@ -46,3 +46,9 @@ r_dir_file(platform_app, sysfs_zram)
 
 # Access to change user photo using Nvcamera
 allow platform_app system_app_data_file:file { read write getattr};
+
+# Access to GPU devices
+allow platform_app gpu_device:chr_file rw_file_perms;
+allow platform_app tegradc_device:chr_file rw_file_perms;
+allow platform_app sysfs:file r_file_perms;
+

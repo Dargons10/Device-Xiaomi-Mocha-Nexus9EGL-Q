@@ -25,7 +25,8 @@
 /dev/nvhost-prof-gpu			u:object_r:gpu_device:s0
 /dev/nvhost-vic				u:object_r:gpu_device:s0
 /dev/nvmap				u:object_r:gpu_device:s0
-/dev/nvhdcp0				u:object_r:gpu_device:s0
+/dev/nvhdcp[0-9]*			u:object_r:gpu_device:s0
+/dev/tty(THS|HS)2			u:object_r:bluetooth_device:s0
 # camera devices
 /dev/camera.pcl				u:object_r:camera_device:s0
 /dev/nvhost-ctrl-vi.*			u:object_r:camera_device:s0
@@ -74,6 +75,7 @@
 /dev/socket/wpa_xlan[0-9]		u:object_r:wpa_socket:s0
 # /dev/tegra_dc devices
 /dev/tegra_dc_.*			u:object_r:tegradc_device:s0
+/dev/tegra_dc_ctrl			u:object_r:tegradc_device:s0
 /dev/tegra-throughput		u:object_r:throughput_device:s0
 /dev/watchdog			u:object_r:watchdog_device:s0
 # rpmb block device
@@ -226,18 +228,20 @@
 /system/vendor/bin/hw/vendor\.lineage\.trust@1\.0-service                    u:object_r:hal_trust_default_exec:s0
 
 # HIDL HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
+# HIDL HALs
+(/system)?/vendor/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
+(/system)?/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
+(/system)?/vendor/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
 
 #############################
 # Data files
@@ -446,6 +450,15 @@
 
 # Variable refresh rate sysfs
 /sys/devices/platform/host1x/tegradc.[0-1]/vrr(/.*)    u:object_r:sysfs_vrr:s0
+# Sysfs
+/sys/class/thermal(/.*)?                                    u:object_r:sysfs_thermal:s0
+/sys/devices/platform/bluedroid_pm/rfkill/rfkill[0-9]+/state u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill[0-9]+/state                         u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/platform/tegra12-i2c\.0/i2c-0/0-002c/backlight/lcd-backlight/brightness u:object_r:sysfs_backlight:s0
+/sys/devices/platform/tegra12-i2c\.0/i2c-0/0-002c/backlight/lcd-backlight/max_brightness u:object_r:sysfs_backlight:s0
+/sys/module/tegra_fuse/parameters/tegra_chip_id              u:object_r:sysfs:s0
+/sys/devices/platform/host1x/capabilities/num_pts            u:object_r:sysfs:s0
+/sys/devices/platform/host1x/gk20a\.0/ptimer_scale_factor    u:object_r:sysfs:s0
 
 # Tegra Display Control
 /sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable u:object_r:sysfs_graphics:s0

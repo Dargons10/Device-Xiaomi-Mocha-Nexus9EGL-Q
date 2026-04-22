@@ -80,6 +80,8 @@ allow surfaceflinger gpu_device:chr_file rw_file_perms;
 
 # Allow access to nvhost and nvmap devices (required for passthrough HWC)
 # Proper labels (gpu_device) are now applied via restorecon.
-# allow surfaceflinger device:chr_file { getattr read write open ioctl };
+allow surfaceflinger device:chr_file { getattr read write open ioctl };
+allow surfaceflinger gpu_device:chr_file { ioctl };
+allow surfaceflinger tegradc_device:chr_file { ioctl };
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
 

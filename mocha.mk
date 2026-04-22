@@ -31,6 +31,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/nvaudio_fx.xml:system/etc/nvaudio_fx.xml  \
     $(LOCAL_PATH)/audio/audio_effects.xml:system/vendor/etc/audio_effects.xml
 
+# aptXHD
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/aptXHD/libaptX_encoder.so:system/vendor/lib/libaptX_encoder.so \
+    $(LOCAL_PATH)/aptXHD/libaptXHD_encoder.so:system/vendor/lib/libaptXHD_encoder.so \
+    $(LOCAL_PATH)/initfiles/enctune.conf:system/etc/enctune.conf
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0 \
     android.hardware.audio@2.0-impl \

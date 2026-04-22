@@ -107,6 +107,7 @@ on boot
     restorecon /dev/tegra_dc_ctrl
     restorecon /dev/tegra_dc_0
     restorecon /dev/tegra_dc_1
+    restorecon /sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable
    
 # charger
     chown system system /sys/devices/platform/tegra12-i2c.0/i2c-1/1-006b/disabled_by_user

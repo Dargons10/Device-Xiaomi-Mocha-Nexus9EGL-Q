@@ -350,6 +350,7 @@
 # PMQoS files for NvCplSvc
 /sys/devices/virtual/thermal(/.*)		u:object_r:sysfs_thermal:s0
 /sys/class/thermal(/.*)?				u:object_r:sysfs_thermal:s0
+/sys/devices/platform/host1x/.*\.tegra_dc_ctrl(/.*)? u:object_r:sysfs_tegradc:s0
 /sys/devices/platform/host1x/tegradc.[0-1]/smartdimmer(/.*)	u:object_r:sysfs_smartdimmer:s0
 /sys/devices/platform/host1x/tegradc\.[0-1]/cmu_enable		u:object_r:sysfs_cmu:s0
 /sys/devices/platform/host1x/tegradc.0/graphics/fb0/modes			u:object_r:sysfs_graphics:s0

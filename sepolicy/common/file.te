@@ -112,6 +112,12 @@ type sysfs_wifi, fs_type, sysfs_type;
 # /sys/devices/platform/pwm-leds(.*)/leds/led_lightbar(/.*)
 type sysfs_lightbar, fs_type, sysfs_type;
 
+# /sys/class/leds/(red|green|blue|button-backlight)
+type sysfs_led, fs_type, sysfs_type;
+
+# /sys/class/backlight/lcd-backlight
+type sysfs_backlight, fs_type, sysfs_type;
+
 # Graphics
 type sysfs_graphics, fs_type, sysfs_type;
 

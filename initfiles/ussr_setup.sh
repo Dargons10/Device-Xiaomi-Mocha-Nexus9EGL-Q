@@ -52,7 +52,7 @@ do
                 fi
             done
         fi
-    elif [[ '1' -eq `echo $zname | grep -c fan` ]]; then
+    elif [[ "$zname" == *fan* ]]; then
         temp=""
         temp=`cat ${tz}/temp`
         if [[ "$temp" != "" && $temp -ge 0 && $temp -lt 190000 ]]; then

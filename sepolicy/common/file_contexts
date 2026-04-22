@@ -161,6 +161,7 @@
 /system/bin/supplicant_log_monitor.sh	u:object_r:wpalog_exec:s0
 # bt
 /system/bin/bt_loader.sh		      u:object_r:bt_loader_exec:s0
+/system/bin/init.btloader.sh		      u:object_r:bt_loader_exec:s0
 # ethernet
 /system/bin/rebindEthernet.sh		u:object_r:rebindEthernet_exec:s0
 # gps
@@ -182,7 +183,7 @@
 # update_js_touch_fw
 /system/bin/update_js_touch_fw.sh	u:object_r:update_js_touch_fw_exec:s0
 # phs
-(/system)?/vendor/bin/ussrd		u:object_r:ussrd_exec:s0
+/(vendor|system/vendor)/bin/ussrd		u:object_r:ussrd_exec:s0
 /system/bin/ussr_setup.sh		u:object_r:ussr_setup_exec:s0
 # dual wifi
 /system/bin/wpa_supplicant_2		u:object_r:hal_wifi_supplicant_default_exec:s0
@@ -322,6 +323,7 @@
 /sys/devices/platform/gpu.0/devfreq/gpu.0/available_frequencies		u:object_r:sysfs_devfreq:s0
 /sys/devices/platform/psy_extcon.*/power_supply/usb/online		u:object_r:sysfs_power_supply:s0
 /sys/devices/platform/psy_extcon.*/power_supply/ac/online		u:object_r:sysfs_power_supply:s0
+/sys/devices/platform/tegra-i2c.0/i2c-0/0-0036/power_supply/battery(/.*)? u:object_r:sysfs_power_supply:s0
 
 # pwm-fan sysfs nodes
 /sys/devices/platform/pwm-fan(.*)/pwm_cap   		u:object_r:sysfs_pwm_fan:s0
@@ -392,6 +394,7 @@
 /sys/module/tegra_fuse/parameters(/.*)?				u:object_r:sysfs_tegra_info:s0
 # Tegra gpu info
 /sys/kernel/tegra_gpu/gpu_available_rates			u:object_r:sysfs_tegra_gpu:s0
+/sys/devices/platform/host1x/gk20a.0/gpu_available_rates	u:object_r:sysfs_tegra_gpu:s0
 # Tegra emc info
 /sys/kernel/tegra_emc/emc_available_rates			u:object_r:sysfs_tegra_emc:s0
 # NVSI sysfs node
@@ -435,3 +438,6 @@
 
 # Variable refresh rate sysfs
 /sys/devices/platform/host1x/tegradc.[0-1]/vrr(/.*)    u:object_r:sysfs_vrr:s0
+
+# Tegra Display Control
+/sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable u:object_r:sysfs_graphics:s0

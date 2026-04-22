@@ -22,6 +22,9 @@ allow surfaceflinger sysfs_thermal:file rw_file_perms;
 allow surfaceflinger sysfs_smartdimmer:file rw_file_perms;
 allow surfaceflinger sysfs:file rw_file_perms;
 
+# Allow binder call to init (required for property setting in Android 10)
+binder_call(surfaceflinger, init)
+
 
 # Allow surfaceflinger to access tsec
 allow surfaceflinger tsec_device:chr_file rw_file_perms;

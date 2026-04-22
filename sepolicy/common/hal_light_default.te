@@ -1,0 +1,14 @@
+# hal_light_default.te - SEPolicy for Mocha Light HAL
+
+# Allow access to the backlight nodes
+allow hal_light_default sysfs_backlight:file rw_file_perms;
+
+# Allow access to the LED nodes (red, green, blue)
+allow hal_light_default sysfs_led:file rw_file_perms;
+
+# Allow access to the LP5521 I2C engine nodes
+allow hal_light_default sysfs_pmic:file rw_file_perms;
+allow hal_light_default sysfs_nvi2c:file rw_file_perms;
+
+# Allow Light HAL to write to sysfs generic for some nodes if not specific enough
+allow hal_light_default sysfs:file rw_file_perms;

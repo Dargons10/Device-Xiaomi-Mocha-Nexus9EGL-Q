@@ -224,6 +224,10 @@ void Light::setLcdBacklight(const LightState& state) {
     std::lock_guard<std::mutex> lock(mLock);
 
     uint32_t brightness = rgbToBrightness(state);
+    
+    // Apply gamma correction (Gamma ~2.0) for better low-light perception
+    float normalized = (float)brightness / 255.0f;
+    brightness = (uint32_t)(pow(normalized, 2.0f) * 255.0f + 0.5f);
 
     // If max panel brightness is not the default (255),
     // apply linear scaling across the accepted range.
@@ -291,7 +295,7 @@ void Light::setSpeakerLightLocked(const LightState& state) {
     mRedLed << 0 << std::endl;
     mGreenLed << 0 << std::endl;
     mBlueLed << 0 << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
     switch (state.flashMode) {
         case Flash::TIMED:
@@ -332,11 +336,11 @@ void Light::setSpeakerLightLocked(const LightState& state) {
             
         if (blink && red) {
             mLedSelectEngine << 1 << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
         if (blink && green) {
             mLedSelectEngine << 2 << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
         if (blink && blue) {
             mLedSelectEngine << 3 << std::endl;

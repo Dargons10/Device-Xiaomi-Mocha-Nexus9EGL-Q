@@ -66,7 +66,7 @@ int main() {
     }
     
     std::ifstream buttonMaxBacklight(kButtonMaxBacklightPath);
-    if (!lcdMaxBacklight) {
+    if (!buttonMaxBacklight) {
         LOG(ERROR) << "Failed to open " << kButtonMaxBacklightPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
@@ -96,14 +96,14 @@ int main() {
     }
     
     std::ofstream ledSelectEngine(kLedSelectEnginePath);
-    if (!blueLed) {
+    if (!ledSelectEngine) {
         LOG(ERROR) << "Failed to open " << kLedSelectEnginePath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
     
     std::ofstream ledRunEngine(kLedRunEnginePath);
-    if (!blueLed) {
+    if (!ledRunEngine) {
         LOG(ERROR) << "Failed to open " << kLedRunEnginePath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;

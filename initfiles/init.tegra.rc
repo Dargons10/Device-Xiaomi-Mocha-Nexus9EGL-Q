@@ -73,6 +73,8 @@ on post-fs-data
     mkdir /data/vendor/hwc 0771 system graphics
     
     mkdir /data/vendor/mediadrm 0770 mediadrm mediadrm
+    mkdir /data/system_ce 0770 system system
+    mkdir /data/misc_ce 0770 system system
 
     # create directory for camera calibration data
     mkdir /mnt/factory/camera 0666 system system

@@ -16,7 +16,7 @@
 # ussrd - power management service
 #
 type ussrd, domain, mlstrustedsubject;
-type ussrd_exec, exec_type, file_type;
+type ussrd_exec, exec_type, vendor_file_type, file_type;
 type ussrd_service, service_manager_type;
 
 init_daemon_domain(ussrd)

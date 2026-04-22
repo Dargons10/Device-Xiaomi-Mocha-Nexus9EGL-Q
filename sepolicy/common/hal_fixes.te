@@ -1,0 +1,47 @@
+# SELinux fixes for Mocha Android 10
+# Co-authored-by: Gemini AI <gemini-ai@google.com>
+
+# GPU access for common domains
+# SurfaceFlinger, SystemServer, and Apps need these ioctls on nvmap and nvhost
+# to function correctly on Tegra K1.
+
+# Allow common domains to access GPU devices
+# Note: gpu_device and tegradc_device are the primary types for graphics.
+allow { surfaceflinger system_server platform_app system_app priv_app } gpu_device:chr_file { ioctl rw_file_perms };
+allow { surfaceflinger system_server platform_app system_app priv_app } tegradc_device:chr_file { ioctl rw_file_perms };
+
+# Allow SurfaceFlinger to execmem (required for some Tegra GL operations)
+# (Already in surfaceflinger.te but adding here for redundancy if needed)
+# allow surfaceflinger self:process execmem;
+
+# Allow init to call hwservicemanager (for HALs running as init)
+binder_call(init, hwservicemanager)
+binder_call(init, system_server)
+
+# Allow vendor_init to write to generic device nodes during boot
+# (Required for some sysfs/dev nodes not yet correctly labeled)
+allow vendor_init device:file w_file_perms;
+
+# Specific ioctls for nvmap
+# (Tegra-specific ioctl commands)
+allow { surfaceflinger system_server platform_app system_app priv_app } gpu_device:chr_file { getattr };
+
+# Allow HALs to access thermal and power supply
+allow { hal_health_server hal_power_server hal_thermal_server } sysfs_thermal:file rw_file_perms;
+allow { hal_health_server hal_power_server hal_thermal_server } sysfs_power_supply:file r_file_perms;
+
+# Fix for vold attempting to prepare CE storage
+allow vold system_data_file:dir { create getattr setattr mounton };
+allow vold system_data_file:file { create getattr setattr };
+
+# Fix for ussrd (unified scaling service)
+allow ussrd self:capability { sys_nice net_admin };
+allow ussrd self:netlink_socket create_socket_perms_no_ioctl;
+allow ussrd system_data_file:dir { add_name write };
+allow ussrd system_data_file:file { create lock open write };
+allow ussrd phsd_data:dir { rw_dir_perms setattr };
+allow ussrd phsd_data:file { create_file_perms lock };
+
+# Fix for surfaceflinger creating socket in /data
+allow surfaceflinger system_data_file:dir { add_name write };
+allow surfaceflinger system_data_file:sock_file { create setattr };

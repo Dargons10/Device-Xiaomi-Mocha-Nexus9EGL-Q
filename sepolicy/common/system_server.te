@@ -151,3 +151,12 @@ hal_client_domain(system_server, hal_graphics_allocator)
 allow system_server self:process execmem;
 allow system_server self:process execmem;
 binder_call(system_server, init)
+
+# Allow system_server to access recent tasks
+allow system_server system_data_file:dir { add_name create setattr write };
+allow system_server system_data_file:file { create open setattr write };
+
+# Allow priv_app to access graphics nodes (for non-Treble UI)
+allow priv_app gpu_device:chr_file rw_file_perms;
+allow priv_app gpu_device:chr_file ioctl;
+allow priv_app sysfs:file r_file_perms;

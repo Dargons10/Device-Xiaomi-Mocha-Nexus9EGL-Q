@@ -97,15 +97,8 @@ on post-fs-data
 import /vendor/etc/init/hw/init.hdcp.rc
 
 on boot
+    # Relabel GPU nodes
     restorecon /dev/nvmap
-    restorecon /dev/nvhost-ctrl
-    restorecon /dev/nvhost-vic
-    restorecon /dev/nvhost-gpu
-    restorecon /dev/nvhost-as-gpu
-    restorecon /dev/nvhost-ctrl-gpu
-    restorecon_recursive /dev/stune
-    restorecon /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp
-    restorecon /sys/module/cpuidle_t11x/parameters/cpu_power_gating_in_idle
     restorecon /dev/nvhost-as-gpu
     restorecon /dev/nvhost-ctrl
     restorecon /dev/nvhost-ctrl-gpu
@@ -116,6 +109,13 @@ on boot
     restorecon /dev/tegra_dc_0
     restorecon /dev/tegra_dc_1
     restorecon /sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable
+
+    # Relabel cgroups
+    restorecon_recursive /dev/stune
+
+    # Relabel power management nodes
+    restorecon /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp
+    restorecon /sys/module/cpuidle_t11x/parameters/cpu_power_gating_in_idle
    
 # charger
     chown system system /sys/devices/platform/tegra12-i2c.0/i2c-1/1-006b/disabled_by_user

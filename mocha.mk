@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
-    $(LOCAL_PATH)/initfiles/init.btloader.sh:system/bin/init.btloader.sh
+    $(LOCAL_PATH)/initfiles/init.btloader.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.btloader.sh
 
 PRODUCT_PACKAGES += \
     libbt-vendor \
@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
 
 # Charging LED
 PRODUCT_COPY_FILES += \
-    device/xiaomi/mocha/initfiles/charger_led.sh:system/bin/charger_led.sh
+    device/xiaomi/mocha/initfiles/charger_led.sh:$(TARGET_COPY_OUT_VENDOR)/bin/charger_led.sh
 
 # DRM HAL
 PRODUCT_PACKAGES += \
@@ -317,7 +317,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/initfiles/init.renderer.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.renderer.sh \
-    $(LOCAL_PATH)/initfiles/ussr_setup.sh:/system/bin/ussr_setup.sh
+    $(LOCAL_PATH)/initfiles/ussr_setup.sh:$(TARGET_COPY_OUT_VENDOR)/bin/ussr_setup.sh
 
 # Sensors
 PRODUCT_PACKAGES += \

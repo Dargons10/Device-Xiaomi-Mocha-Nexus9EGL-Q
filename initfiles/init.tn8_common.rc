@@ -101,10 +101,10 @@ service charger /system/bin/charger
     oneshot
 
 on charger
-	chmod 0755 /system/bin/charger_led.sh
+	chmod 0755 /vendor/bin/charger_led.sh
 
 
-    exec - root root -- /system/bin/sh /system/bin/charger_led.sh &
+    exec - root root -- /vendor/bin/sh /vendor/bin/charger_led.sh &
 
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1

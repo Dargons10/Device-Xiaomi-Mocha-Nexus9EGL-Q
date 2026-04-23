@@ -124,7 +124,7 @@ on boot
     chown system system /sys/devices/platform/tegra12-i2c.0/i2c-1/1-006b/disabled_by_user
 
 # Power management tweaks
-    write /sys/module/bcmdhd/parameters/dhd_slp_auto 0
+    write /sys/module/bcmdhd/parameters/dhd_slpauto 0
     write /sys/module/tegra_core/parameters/lp0_state 0
 
 #dt2w

@@ -189,6 +189,9 @@
     <!-- Integer indicating wpa_supplicant scan interval when p2p is connected in milliseconds -->
     <integer translatable="false" name="config_wifi_scan_interval_p2p_connected">15000</integer>
 
+    <!-- Boolean indicating that the wifi chip should be kept on during sleep -->
+    <integer name="config_wifi_sleep_policy">2</integer>
+
      <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->

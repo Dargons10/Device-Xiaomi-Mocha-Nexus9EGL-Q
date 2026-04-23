@@ -174,10 +174,10 @@
 /system/bin/watchdogd         u:object_r:watchdogd_exec:s0
 
 # TEE
-(/system)?/vendor/bin/tlk_daemon	u:object_r:tee_exec:s0
-(/system)?/vendor/bin/eks2_client	u:object_r:tee_exec:s0
-(/system)?/vendor/bin/ss_status		u:object_r:tee_exec:s0
-(/system)?/vendor/bin/run_ss_status.sh	u:object_r:tee_exec:s0
+(/system/vendor|/vendor)/bin/tlk_daemon	u:object_r:tee_exec:s0
+(/system/vendor|/vendor)/bin/eks2_client	u:object_r:tee_exec:s0
+(/system/vendor|/vendor)/bin/ss_status		u:object_r:tee_exec:s0
+(/system/vendor|/vendor)/bin/run_ss_status.sh	u:object_r:tee_exec:s0
 # wifi
 /system/bin/wifi_loader.sh		u:object_r:wifi_loader_exec:s0
 # wpalog
@@ -195,34 +195,34 @@
 # adbenable.sh
 /system/bin/adbenable.sh		u:object_r:adb_enable_exec:s0
 # diag
-(/system)?/vendor/bin/stress_test.sh	u:object_r:diag_exec:s0
-(/system)?/vendor/bin/diag_perm.sh	u:object_r:diag_exec:s0
+(/system/vendor|/vendor)/bin/stress_test.sh	u:object_r:diag_exec:s0
+(/system/vendor|/vendor)/bin/diag_perm.sh	u:object_r:diag_exec:s0
 # gpload
-(/system)?/vendor/bin/gpload		u:object_r:gpload_exec:s0
+(/system/vendor|/vendor)/bin/gpload		u:object_r:gpload_exec:s0
 # hubcore
-(/system)?/vendor/bin/hubcore		u:object_r:hubcore_exec:s0
+(/system/vendor|/vendor)/bin/hubcore		u:object_r:hubcore_exec:s0
 # ctload
-(/system)?/vendor/bin/ctload		u:object_r:ctload_exec:s0
+(/system/vendor|/vendor)/bin/ctload		u:object_r:ctload_exec:s0
 # update_js_touch_fw
 /system/bin/update_js_touch_fw.sh	u:object_r:update_js_touch_fw_exec:s0
 # phs
-(/system)?/vendor/bin/ussrd		u:object_r:ussrd_exec:s0
+(/system/vendor|/vendor)/bin/ussrd		u:object_r:ussrd_exec:s0
 /system/bin/ussr_setup\.sh		u:object_r:ussr_setup_exec:s0
 # dual wifi
 /system/bin/wpa_supplicant_2		u:object_r:hal_wifi_supplicant_default_exec:s0
 # frostaudiortp
 /system/bin/frostaudiortp		u:object_r:frostaudiortp_exec:s0
 # pbc
-(/system)?/vendor/bin/pbc		u:object_r:pbc_exec:s0
-(/system)?/vendor/bin/pbc2		u:object_r:pbc_exec:s0
+(/system/vendor|/vendor)/bin/pbc		u:object_r:pbc_exec:s0
+(/system/vendor|/vendor)/bin/pbc2		u:object_r:pbc_exec:s0
 # cvc
-(/system)?/vendor/bin/cvc		u:object_r:cvc_exec:s0
+(/system/vendor|/vendor)/bin/cvc		u:object_r:cvc_exec:s0
 # cyupdate.sh
-(/system)?/vendor/bin/cyupdate.sh	u:object_r:cyupdate_exec:s0
+(/system/vendor|/vendor)/bin/cyupdate.sh	u:object_r:cyupdate_exec:s0
 # cyload
-(/system)?/vendor/bin/cyload		u:object_r:cyupdate_exec:s0
+(/system/vendor|/vendor)/bin/cyload		u:object_r:cyupdate_exec:s0
 # upnpfused
-(/system)?/vendor/bin/upnpfuse		u:object_r:upnpfused_exec:s0
+(/system/vendor|/vendor)/bin/upnpfuse		u:object_r:upnpfused_exec:s0
 # qvs shell script
 /system/xbin/qvs_post_boot.sh		u:object_r:qvs_exec:s0
 #setup_fs
@@ -234,34 +234,34 @@
 # IKEv2 daemon
 /system/bin/charon			u:object_r:charon_exec:s0
 # Blake video files
-(/system)?/vendor/oem/media(/.*)?	u:object_r:oem_media_file:s0
+(/system/vendor|/vendor)/oem/media(/.*)?	u:object_r:oem_media_file:s0
 # camera config
 /system/bin/config_cameras.sh		u:object_r:config_cameras_exec:s0
 # service to dump logs
-(/system)?/vendor/bin/cac_log_dumper	u:object_r:cac_log_dumper_exec:s0
+(/system/vendor|/vendor)/bin/cac_log_dumper	u:object_r:cac_log_dumper_exec:s0
 # factory_tests
-(/system)?/vendor/bin/factory_tests	u:object_r:factory_tests_exec:s0
+(/system/vendor|/vendor)/bin/factory_tests	u:object_r:factory_tests_exec:s0
 # Lineage Trust HAL
 /system/vendor/bin/hw/vendor\.lineage\.trust@1\.0-service                    u:object_r:hal_trust_default_exec:s0
 
 # HIDL HALs
-(/system)?/vendor/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
-(/system)?/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.2-service u:object_r:hal_graphics_composer_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.3-service u:object_r:hal_graphics_composer_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.allocator@3\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
-(/system)?/vendor/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.thermal@1\.0-service-nvidia u:object_r:hal_thermal_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.nvidia u:object_r:hal_livedisplay_nvidia_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.memtrack@1\.0-service-nvidia u:object_r:hal_memtrack_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.mocha        u:object_r:hal_vibrator_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service       u:object_r:hal_keymaster_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service       u:object_r:hal_bluetooth_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service      u:object_r:hal_gatekeeper_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.media\.omx@1\.0-service       u:object_r:hal_omx_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.composer@2\.1-service u:object_r:hal_graphics_composer_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.composer@2\.2-service u:object_r:hal_graphics_composer_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.composer@2\.3-service u:object_r:hal_graphics_composer_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.allocator@3\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
+(/system/vendor|/vendor)/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service u:object_r:hal_graphics_allocator_default_exec:s0
 
 #############################
 # Data files

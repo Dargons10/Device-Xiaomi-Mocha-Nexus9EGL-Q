@@ -98,6 +98,14 @@ import /vendor/etc/init/hw/init.hdcp.rc
 
 on boot
     restorecon /dev/nvmap
+    restorecon /dev/nvhost-ctrl
+    restorecon /dev/nvhost-vic
+    restorecon /dev/nvhost-gpu
+    restorecon /dev/nvhost-as-gpu
+    restorecon /dev/nvhost-ctrl-gpu
+    restorecon_recursive /dev/stune
+    restorecon /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp
+    restorecon /sys/module/cpuidle_t11x/parameters/cpu_power_gating_in_idle
     restorecon /dev/nvhost-as-gpu
     restorecon /dev/nvhost-ctrl
     restorecon /dev/nvhost-ctrl-gpu

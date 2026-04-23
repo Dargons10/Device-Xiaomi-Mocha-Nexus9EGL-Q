@@ -148,3 +148,6 @@ hal_client_domain(system_server, hal_health)
 hal_client_domain(system_server, hal_livedisplay_nvidia)
 hal_client_domain(system_server, hal_graphics_allocator)
 
+allow system_server self:process execmem;
+allow system_server self:process execmem;
+binder_call(system_server, init)

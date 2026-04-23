@@ -264,8 +264,8 @@
 /system/vendor/bin/hw/vendor\.lineage\.trust@1\.0-service                    u:object_r:hal_trust_default_exec:s0
 
 # HIDL HALs
-/vendor/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
-/system/vendor/bin/hw/android\.hardware\.health@2\.0-service\.tegra    u:object_r:hal_health_default_exec:s0
+/vendor/bin/hw/android\.hardware\.health@2\.0-service.*    u:object_r:hal_health_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.health@2\.0-service.*    u:object_r:hal_health_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
 /system/vendor/bin/hw/android\.hardware\.power@1\.0-service\.mocha     u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.mocha     u:object_r:hal_light_default_exec:s0

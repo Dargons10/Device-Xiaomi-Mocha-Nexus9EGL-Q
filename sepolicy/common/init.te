@@ -52,3 +52,8 @@ allow init { gpu_device tegradc_device throughput_device }:chr_file { relabelto 
 allow init device:dir { relabelfrom };
 allow init { gpu_device tegradc_device throughput_device }:dir { relabelto };
 
+# Suppress noisy denials for debug/watchdog
+dontaudit watchdog init:process signal;
+dontaudit crash_dump init:process ptrace;
+dontaudit system_server init:binder call;
+

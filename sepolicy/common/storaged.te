@@ -1,2 +1,3 @@
 allow storaged package_native_service:service_manager find;
+binder_call(storaged, system_server)
 hal_client_domain(storaged, hal_health)

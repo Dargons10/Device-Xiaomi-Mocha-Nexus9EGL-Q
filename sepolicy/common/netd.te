@@ -30,4 +30,7 @@ allow netd kernel:system module_request;
 # Allow netd to execute toolbox/toybox
 allow netd toolbox_exec:file rx_file_perms;
 
+# Allow netd to write to cgroup tasks
+allow netd cgroup:file { open write };
+
 dontaudit netd self:capability { sys_module fsetid };

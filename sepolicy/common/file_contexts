@@ -508,6 +508,7 @@
 
 # Variable refresh rate sysfs
 /sys/devices/platform/host1x/tegradc.[0-1]/vrr(/.*)    u:object_r:sysfs_vrr:s0
+
 # Sysfs
 /sys/class/thermal(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/platform/bluedroid_pm/rfkill/rfkill[0-9]+/state u:object_r:sysfs_bluetooth_writable:s0
@@ -519,4 +520,6 @@
 /sys/devices/platform/host1x/gk20a\.0/ptimer_scale_factor    u:object_r:sysfs_gpu:s0
 
 # Tegra Display Control
-/sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable u:object_r:sysfs_graphics:s0
+/sys/devices/platform/host1x/54200000\.dc/enable u:object_r:sysfs_graphics:s0
+/sys/devices/platform/host1x/54240000\.dc/enable u:object_r:sysfs_graphics:s0
+/sys/devices/platform/host1x/.*\.dc/enable u:object_r:sysfs_graphics:s0

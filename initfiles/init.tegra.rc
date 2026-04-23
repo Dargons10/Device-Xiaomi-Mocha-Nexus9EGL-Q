@@ -108,7 +108,10 @@ on boot
     restorecon /dev/tegra_dc_ctrl
     restorecon /dev/tegra_dc_0
     restorecon /dev/tegra_dc_1
-    restorecon /sys/devices/platform/host1x/7000ee00.tegra_dc_ctrl/enable
+    restorecon /sys/devices/platform/host1x/54200000.dc/enable
+    restorecon /sys/devices/platform/host1x/54240000.dc/enable
+    restorecon /sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/brightness
+    restorecon /sys/devices/platform/tegra12-i2c.0/i2c-0/0-002c/backlight/lcd-backlight/max_brightness
 
     # Relabel cgroups
     restorecon_recursive /dev/stune
